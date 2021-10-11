@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>Document</title>
 </head>
 <body>
-    <section id="detalhesFilmes">Detalhes do Filme</section>
+    <header class="header">
+        <div class="center">
+          <div class="menu">
+            <ul>
+              <li><a href="/">INICIO</li>
+              <li><a href="filmes">FILMES</li>
+              <li><a href="series">SERIES</li>
+              <li><a href="livros">LIVROS</li>
+              <li><a href="carros">CARROS</li>
+              <li><a href="videos">VIDEOS</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <section class="detalhesFilmes">Detalhes do Filme</section>
     <section>
         <ul>
             <div>
             <img src= "<%= filme.imagem %>" alt= "<%= filme.nome %>" width = "200"/>
             </div>
-            <div>Titulo: <%= filme.titulo %></div>
+            <div class="">Titulo: <%= filme.titulo %></div>
             <div>Ano de Lançamento: <%= filme.ano %></div>
             <div>Genero: <%= filme.genero %></div>
             <div>Duração: <%= filme.duracao %></div>

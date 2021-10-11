@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head id="head-index">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <title>Cadastro</title>
+  </head>
+  <body id="body_cadastro">
+    <header class="header">
+        <div class="center">
+          <div class="menu">
+            <ul>
+              <li><a href="/">INICIO</li>
+              <li><a href="filmes">FILMES</li>
+              <li><a href="series">SERIES</li>
+              <li><a href="livros">LIVROS</li>
+              <li><a href="carros">CARROS</li>
+              <li><a href="videos">VIDEOS</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <section>
+      <h1 id="cadastro1">CADASTRO DE FILMES</h1>
+      <p id="cadastro2">Cadastre seu filme abaixo:</p>
+    </section>
+
+    <section id="cadastro">
+      <form action="/newFilme" method="POST">
+        <div>
+          <label for="titulo">TITULO:</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Nome do filme"
+            required
+          />
+        </div>
+        <div>
+          <label for="ano">ANO:</label>
+          <input
+            type="number"
+            name="ano"
+            id="ano"
+            placeholder="Ano de Lançamento"
+            required
+          />
+        </div>
+        <div>
+          <label for="genero">Genero:</label>
+          <input
+            type="text"
+            name="genero"
+            id="genero"
+            placeholder="Genero"
+            required
+          />
+        </div>
+        <div>
+          <label for="duracao">Duração:</label>
+          <input
+            type="text"
+            name="duracao"
+            id="duracao"
+            placeholder="Duração"
+            required
+          />
+        </div>
+        <div>
+          <label for="sinopse">Sinopse:</label>
+          <input
+            type="text"
+            name="sinopse"
+            id="sinopse"
+            placeholder="Sinopse do filme"
+            required
+          />
+        </div>
+        <div>
+          <label for="note">Nota:</label>
+          <input
+            type="float.number"
+            name="nota"
+            id="nota"
+            placeholder="Nota"
+            required
+          />
+        </div>
+        <div>
+          <label for="imagem">Imagem:</label>
+          <input
+            type="url"
+            name="imagem"
+            id="imagem"
+            placeholder="Link da imagem"
+            required
+          />
+        </div>
+        <div>
+          <label for="trailer">Trailer:</label>
+          <input
+            type="url"
+            name="trailer"
+            id="trailer"
+            placeholder="Link do trailer"
+            required
+          />
+        </div>
+        
+        <button type="submit" id="enviar">Enviar</button>
+      </form>
+    </section>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

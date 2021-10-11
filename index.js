@@ -15,7 +15,7 @@ let filmes = [
         duracao: "2h 59m",
         sinopse: "Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal. Para isso, o hobbit Frodo tem um caminho árduo pela frente, onde encontra perigo, medo e seres bizarros. Ao seu lado para o cumprimento desta jornada, ele aos poucos pode contar com outros hobbits, um elfo, um anão, dois humanos e um mago, totalizando nove pessoas que formam a Sociedade do Anel.",
         nota: 10,
-        imagem: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tlvsNCwWEIgwAM23aNzTmMIcPEZ.jpg",
+        imagem: "/img/aneis.jpg",
         trailer: "https://www.youtube.com/watch?v=V75dMMIW2B4"   
 },
     {
@@ -107,12 +107,33 @@ let videos = [
     descricao: "Cover versão metal da música Summer of 69 do Bryan Adams",
     tipo: "Vídeo Clipe",
     nota: 10,
-    link: "https://www.youtube.com/watch?v=rg8aBmwUG9k"   
+    link: "https://www.youtube.com/watch?v=rg8aBmwUG9k",
+    imagem: "data:image/png;base64,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"    
 }];
 app.get("/", (req, res) => {
     res.render("index", { titulo: "filmes", filmes: filmes , titulo: "series", series: series, titulo: "livros", livros: livros, titulo: "carros", carros: carros, titulo: "videos", videos: videos });
      
   });
+
+app.get("/filmes", (req, res) => {
+    res.render("filmes",{ titulo: "filmes", filmes: filmes});    
+});
+
+app.get("/series", (req, res) => {
+    res.render("series",{ titulo: "series", series: series});    
+});
+
+app.get("/livros", (req, res) => {
+    res.render("livros",{ titulo: "livros", livros: livros});    
+});
+
+app.get("/carros", (req, res) => {
+    res.render("carros",{ titulo: "carros", carros: carros});    
+});
+
+app.get("/videos", (req, res) => {
+    res.render("videos",{ titulo: "videos", videos: videos});    
+});
 
 app.get("/detalhesFilmes/:id", (req, res) => {
     const id = req.params.id
@@ -144,6 +165,26 @@ app.get("/detalhesVideos/:id", (req, res) => {
     res.render("detalhesVideos", { video })
 });
 
+app.get("/cadastroFilme", (req, res) => {
+    res.render("cadastroFilme")
+  })
+  
+  app.post("/newFilme", (req, res) => {
+    const {titulo, ano, genero, duracao, sinopse, nota, imagem, trailer} = req.body;
+    const novoFilme = {
+      titulo: titulo,
+      ano: ano,
+      genero: genero,
+      duracao: duracao,
+      sinopse: sinopse,
+      nota: nota,
+      imagem: imagem,
+      trailer: trailer
+    }
+    filmes.push(novoFilme);
+    
+  res.redirect("/filmes");
+  })
 
   app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)

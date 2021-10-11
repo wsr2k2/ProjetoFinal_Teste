@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<head id="teste">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Meu catalogo</title>
 </head>
-    <a href="/cadastro"> Cadastrar</a>
-<!--Lista: Uma tela responsável por mostrar a lista de todos os itens do catálogo.-->
 
+<!--Lista: Uma tela responsável por mostrar a lista de todos os itens do catálogo.-->
+<body>
+  <header class="header">
+    <div class="center">
+      <div class="menu">
+        <ul>
+          <li><a href="/">INICIO</li>
+          <li><a href="filmes">FILMES</li>
+          <li><a href="series">SERIES</li>
+          <li><a href="livros">LIVROS</li>
+          <li><a href="carros">CARROS</li>
+          <li><a href="videos">VIDEOS</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <nav class="">
+<a href="/filmes">FILMES</a>
+<a href="/series">SERIES</a>
+<a href="/livros">LIVROS</a>
+<a href="/carros">CARROS</a>
+<a href="/videos">VIDEOS</a>
+  </nav>
 <section>FILMES</section>
-<section class="filmes">
+<section class="">
   <% filmes.forEach((item, id) => { %>
   <ul>
     <div>
@@ -20,7 +42,7 @@
   <% }) %>
 </section>
 <section>SERIES</section>
-<section class="series">
+<section class="">
   <% series.forEach((item, id) => { %>
   <ul>
     <div>
@@ -30,7 +52,7 @@
   <% }) %>
 </section>
 <section>LIVROS</section>
-<section class="livros">
+<section class="">
   <% livros.forEach((item, id) => { %>
   <ul>
     <div>
@@ -40,7 +62,7 @@
   <% }) %>
 </section>
 <section>CARROS</section>
-<section class="livros">
+<section class="">
   <% carros.forEach((item, id) => { %>
   <ul>
     <div>
@@ -50,7 +72,7 @@
   <% }) %>
 </section>
 <section>VIDEOS</section>
-<section class="videos">
+<section class="">
   <% videos.forEach((item, id) => { %>
   <ul>
     <div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head id="teste">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Meu catalogo</title>
+</head>
+<body class="">
+  <header class="header">
+    <div class="center">
+      <div class="menu">
+        <ul>
+          <li><a href="/">INICIO</li>
+          <li><a href="filmes">FILMES</li>
+          <li><a href="series">SERIES</li>
+          <li><a href="livros">LIVROS</li>
+          <li><a href="carros">CARROS</li>
+          <li><a href="videos">VIDEOS</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section class="">CARROS</section>
+<section class="container">
+  <% carros.forEach((item, id) => { %>
+  <ul>
+    <div>
+      <a href="/detalhesCarros/<%=id%>">
+        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+  </ul>
+  <% }) %>
+</section>
+</section>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
