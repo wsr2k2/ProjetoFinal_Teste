@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="detalhesLivros">Detalhes do Livro</section>
+    <section>
+        <ul>
+            <div>
+            <img src= "<%= livro.imagem %>" alt= "<%= livro.nome %>" width = "200"/>
+            </div>
+            <div>Titulo: <%= livro.titulo %></div>
+            <div>Idioma: <%= livro.idioma %></div>
+            <div>Autor: <%= livro.autor %></div>
+            <div>Genero: <%= livro.genero %></div>
+            <div>Páginas: <%= livro.paginas %></div>
+            <div>Sinopse: <%= livro.sinopse %></div>
+            <div>Nota: <%= livro.nota %> </div>
+        </ul>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>

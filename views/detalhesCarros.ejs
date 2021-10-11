@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="detalhesCarros">Detalhes do Carro</section>
+    <section>
+        <ul>
+            <div>
+            <img src= "<%= carro.imagem %>" alt= "<%= carro.nome %>" width = "200"/>
+            </div>
+            <div>Marca: <%= carro.marca %></div>
+            <div>Modelo: <%= carro.modelo %></div>
+            <div>Potência: <%= carro.potencia %></div>
+            <div>Velocidade Máxima: <%= carro.velocidade %></div>
+            <div>De 0 à 100: <%= carro.zeroCem %></div>
+            <div>Descrição <%= carro.descricao %></div>
+            <div>Nota: <%= carro.nota %></div>
+            <div>Site Montadora: <%= carro.site %> </div>
+        </ul>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="detalhesSeries">Detalhes da Série</section>
+    <section>
+        <ul>
+            <div>
+            <img src= "<%= serie.imagem %>" alt= "<%= serie.nome %>" width = "200"/>
+            </div>
+            <div>Titulo: <%= serie.titulo %></div>
+            <div>Ano de Lançamento: <%= serie.ano %></div>
+            <div>Genero: <%= serie.genero %></div>
+            <div>Temporadas: <%= serie.temporadas %></div>
+            <div>Episódios: <%= serie.episodios %></div>
+            <div>Sinopse: <%= serie.sinopse %></div>
+            <div>Nota: <%= serie.nota %></div>
+            <div>Trailer: <%= serie.trailer %> </div>
+        </ul>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>

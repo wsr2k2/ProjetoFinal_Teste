@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="detalhesVideos">Detalhes do Vídeo</section>
+    <section>
+        <ul>
+            <div>
+            <img src= "<%= video.imagem %>" alt= "<%= video.nome %>" width = "200"/>
+            </div>
+            <div>Titulo: <%= video.titulo %></div>
+            <div>Descrição do conteúdo: <%= video.descricao %></div>
+            <div>Tipo de Conteúdo: <%= video.tipo %></div>
+            <div>Nota: <%= video.nota %></div>
+            <div>Link: <%= video.link %></div>
+        </ul>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>

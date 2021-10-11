@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="detalhesFilmes">Detalhes do Filme</section>
+    <section>
+        <ul>
+            <div>
+            <img src= "<%= filme.imagem %>" alt= "<%= filme.nome %>" width = "200"/>
+            </div>
+            <div>Titulo: <%= filme.titulo %></div>
+            <div>Ano de Lançamento: <%= filme.ano %></div>
+            <div>Genero: <%= filme.genero %></div>
+            <div>Duração: <%= filme.duracao %></div>
+            <div>Sinopse: <%= filme.sinopse %></div>
+            <div>Nota: <%= filme.nota %></div>
+            <div>Trailer: <%= filme.trailer %> </div>
+        </ul>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>

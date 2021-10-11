@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu catalogo</title>
+</head>
+    <a href="/cadastro"> Cadastrar</a>
+<!--Lista: Uma tela responsável por mostrar a lista de todos os itens do catálogo.-->
+
+<section>FILMES</section>
+<section class="filmes">
+  <% filmes.forEach((item, id) => { %>
+  <ul>
+    <div>
+      <a href="/detalhesFilmes/<%=id%>">
+        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+  </ul>
+  <% }) %>
+</section>
+<section>SERIES</section>
+<section class="series">
+  <% series.forEach((item, id) => { %>
+  <ul>
+    <div>
+      <a href="/detalhesSeries/<%=id%>">
+        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+  </ul>
+  <% }) %>
+</section>
+<section>LIVROS</section>
+<section class="livros">
+  <% livros.forEach((item, id) => { %>
+  <ul>
+    <div>
+      <a href="/detalhesLivros/<%=id%>">
+        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+  </ul>
+  <% }) %>
+</section>
+<section>CARROS</section>
+<section class="livros">
+  <% carros.forEach((item, id) => { %>
+  <ul>
+    <div>
+      <a href="/detalhesCarros/<%=id%>">
+        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+  </ul>
+  <% }) %>
+</section>
+<section>VIDEOS</section>
+<section class="videos">
+  <% videos.forEach((item, id) => { %>
+  <ul>
+    <div>
+      <a href="/detalhesVideos/<%=id%>">
+        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+  </ul>
+  <% }) %>
+</section>
+<body>
+    <script src="/js/script.js"></script>
+</body>
+</html>
