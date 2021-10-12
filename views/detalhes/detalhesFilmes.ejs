@@ -8,22 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="header">
-        <div class="center">
-          <div class="menu">
-            <ul>
-              <li><a href="/">INICIO</li>
-              <li><a href="filmes">FILMES</li>
-              <li><a href="series">SERIES</li>
-              <li><a href="livros">LIVROS</li>
-              <li><a href="carros">CARROS</li>
-              <li><a href="videos">VIDEOS</li>
-            </ul>
-          </div>
-        </div>
-      </header>
-    <section class="detalhesFilmes">Detalhes do Filme</section>
-    <section>
+    
+    
+<section>
         <ul>
             <div>
             <img src= "<%= filme.imagem %>" alt= "<%= filme.nome %>" width = "200"/>
@@ -36,6 +23,10 @@
             <div>Nota: <%= filme.nota %></div>
             <div>Trailer: <%= filme.trailer %> </div>
         </ul>
+    </section>
+    <section>
+        <button name="deletar"> DELETAR</button>
+        <button name="editarx"> EDITAR</button>
     </section>
     <script src="/js/script.js"></script>
 </body>

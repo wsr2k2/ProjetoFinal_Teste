@@ -11,19 +11,19 @@
   <body id="body_cadastro">
     
     <section>
-      <h1 id="cadastro1">CADASTRO DE FILMES</h1>
-      <p id="cadastro2">Cadastre seu filme abaixo:</p>
+      <h1 id="cadastro1">CADASTRO DE SERIES</h1>
+      <p id="cadastro2">Cadastre sua série abaixo:</p>
     </section>
 
     <section id="cadastro">
-      <form action="/newFilme" method="POST">
+      <form action="/newSerie" method="POST">
         <div>
           <label for="titulo">Título:</label>
           <input
             type="text"
             name="titulo"
             id="titulo"
-            placeholder="Nome do filme"
+            placeholder="Nome da série"
             required
           />
         </div>
@@ -48,12 +48,23 @@
           />
         </div>
         <div>
-          <label for="duracao">Duração:</label>
+          <label for="temporadas">Temporadas:</label>
           <input
-            type="text"
-            name="duracao"
-            id="duracao"
-            placeholder="Duração"
+            type="number"
+            name="temporadas"
+            id="temporadas"
+            placeholder="temporadas"
+            required
+          />
+        </div>
+        <div>
+          <label for="episodios">Episódios
+            :</label>
+          <input
+            type="number"
+            name="episodios"
+            id="episodios"
+            placeholder="Episódios"
             required
           />
         </div>
@@ -63,7 +74,7 @@
             type="text"
             name="sinopse"
             id="sinopse"
-            placeholder="Sinopse do filme"
+            placeholder="Sinopse"
             required
           />
         </div>

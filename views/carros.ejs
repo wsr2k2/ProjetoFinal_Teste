@@ -18,16 +18,16 @@
           <li><a href="livros">LIVROS</li>
           <li><a href="carros">CARROS</li>
           <li><a href="videos">VIDEOS</li>
+            <li><a href="cadastroCarro">CADASTRAR</li>
         </ul>
       </div>
     </div>
   </header>
-  <section class="">CARROS</section>
 <section class="container">
   <% carros.forEach((item, id) => { %>
   <ul>
     <div>
-      <a href="/detalhesCarros/<%=id%>">
+      <a href="/detalhes/detalhesCarros/<%=id%>">
         <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
   </ul>
   <% }) %>
