@@ -8,79 +8,42 @@
     <title>Meu catalogo</title>
 </head>
 
+<header class="header">
+  <div class="center">
+    <div class="menu">
+      <ul>
+        <li><a href="/">INICIO</li>
+        <li><a href="filmes">FILMES</li>
+        <li><a href="series">SERIES</li>
+        <li><a href="livros">LIVROS</li>
+        <li><a href="carros">CARROS</li>
+        <li><a href="videos">VIDEOS</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
 <!--Lista: Uma tela responsável por mostrar a lista de todos os itens do catálogo.-->
 <body>
-  <header class="header">
-    <div class="center">
-      <div class="menu">
-        <ul>
-          <li><a href="/">INICIO</li>
-          <li><a href="filmes">FILMES</li>
-          <li><a href="series">SERIES</li>
-          <li><a href="livros">LIVROS</li>
-          <li><a href="carros">CARROS</li>
-          <li><a href="videos">VIDEOS</li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <nav class="">
-<a href="/filmes">FILMES</a>
-<a href="/series">SERIES</a>
-<a href="/livros">LIVROS</a>
-<a href="/carros">CARROS</a>
-<a href="/videos">VIDEOS</a>
-  </nav>
-<section>FILMES</section>
-<section class="">
-  <% filmes.forEach((item, id) => { %>
-  <ul>
-    <div>
-      <a href="/detalhesFilmes/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
-  </ul>
-  <% }) %>
+  <section class="buttons">
+  <a href="/filmes">
+    <img href="/filmes" src="https://4.bp.blogspot.com/-dmOm-EkBhUQ/V3E7i8lckXI/AAAAAAAAAx8/hCLXnMLxQ6gFWtakfT4qYKFB1OIGP3F_QCLcB/s1600/filmes.png" width=256>
+  </a>
+  <a href="/series">
+    <img href="/filmes" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/54fbf860-1d0d-46e7-a22a-74edb3053c67/d6qj64q-f30328aa-5b8c-4ec4-979a-dea8d78c5498.png/v1/fill/w_1024,h_768,strp/tv_series_icon_by_quaffleeye_d6qj64q-fullview.png" width=400>
+  </a>
+  <a href="/livros">
+    <img href="/livros" src="https://images.vexels.com/media/users/3/149510/isolated/lists/2585bf984d29347ef9acb44e2964c36d-livro-pilha-icone-3d.png" width=256>
+  </a>
+  <a href="/carros">
+    <img href="/carros" src="https://www.pinclipart.com/picdir/big/411-4112079_carro-png-aniversario-walex-pinterest-carropng-cars-disney.png" width=350>
+  </a>
+  <a href="/videos">
+    <img href="/videos" src="https://i0.wp.com/multarte.com.br/wp-content/uploads/2020/05/classic-youtube-icon-2.png?resize=512%2C512&ssl=1" width=400>
+  </a>
 </section>
-<section>SERIES</section>
-<section class="">
-  <% series.forEach((item, id) => { %>
-  <ul>
-    <div>
-      <a href="/detalhesSeries/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
-  </ul>
-  <% }) %>
-</section>
-<section>LIVROS</section>
-<section class="">
-  <% livros.forEach((item, id) => { %>
-  <ul>
-    <div>
-      <a href="/detalhesLivros/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
-  </ul>
-  <% }) %>
-</section>
-<section>CARROS</section>
-<section class="">
-  <% carros.forEach((item, id) => { %>
-  <ul>
-    <div>
-      <a href="/detalhesCarros/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
-  </ul>
-  <% }) %>
-</section>
-<section>VIDEOS</section>
-<section class="">
-  <% videos.forEach((item, id) => { %>
-  <ul>
-    <div>
-      <a href="/detalhesVideos/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
-  </ul>
-  <% }) %>
-</section>
+  
+
 <body>
     <script src="/js/script.js"></script>
 </body>
