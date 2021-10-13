@@ -98,7 +98,8 @@ let videos = [
         descricao: "Cover versão metal da música God Save The Queen dos Sex Pistols",
         tipo: "Vídeo Clipe",
         nota: 10,
-        link: "https://cdn.icon-icons.com/icons2/1471/PNG/512/23-videos_101207.png"   
+        link: "https://www.youtube.com/watch?v=Qep9mynlyTg",
+        imagem: "https://i1.wp.com/multarte.com.br/wp-content/uploads/2020/05/371903520_social_icons_youtube.png?fit=696%2C696&ssl=1"  
 },
 {
     id: 002,
@@ -107,7 +108,7 @@ let videos = [
     tipo: "Vídeo Clipe",
     nota: 10,
     link: "https://www.youtube.com/watch?v=rg8aBmwUG9k",
-    imagem: "https://cdn.icon-icons.com/icons2/1471/PNG/512/23-videos_101207.png"    
+    imagem: "https://i1.wp.com/multarte.com.br/wp-content/uploads/2020/05/371903520_social_icons_youtube.png?fit=696%2C696&ssl=1"    
 }];
 app.get("/", (req, res) => {
     res.render("index", { titulo: "filmes", filmes: filmes , titulo: "series", series: series, titulo: "livros", livros: livros, titulo: "carros", carros: carros, titulo: "videos", videos: videos });     
