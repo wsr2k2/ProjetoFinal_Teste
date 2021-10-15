@@ -99,7 +99,7 @@ let videos = [
         tipo: "Vídeo Clipe",
         nota: 10,
         link: "https://www.youtube.com/embed/Qep9mynlyTg",
-        imagem: "https://i1.wp.com/multarte.com.br/wp-content/uploads/2020/05/371903520_social_icons_youtube.png?fit=696%2C696&ssl=1"  
+          
 },
 {
     id: 002,
@@ -107,8 +107,8 @@ let videos = [
     descricao: "Cover versão metal da música Summer of 69 do Bryan Adams",
     tipo: "Vídeo Clipe",
     nota: 10,
-    link: "https://www.youtube.com/watch?v=rg8aBmwUG9k",
-    imagem: "https://i1.wp.com/multarte.com.br/wp-content/uploads/2020/05/371903520_social_icons_youtube.png?fit=696%2C696&ssl=1"    
+    link: "https://www.youtube.com/embed/rg8aBmwUG9k",
+       
 }];
 app.get("/", (req, res) => {
     res.render("index", { titulo: "filmes", filmes: filmes , titulo: "series", series: series, titulo: "livros", livros: livros, titulo: "carros", carros: carros, titulo: "videos", videos: videos });     
@@ -266,6 +266,11 @@ app.post("/newFilme", (req, res) => {
     
   res.redirect("/videos");
   })
+
+  app.get("/teste", (req, res) => {
+    res.render("teste")
+  })
+
   app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)
 );

@@ -8,18 +8,27 @@
     <title>Document</title>
 </head>
 <body>
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="title"></div>
+    <a href="/videos">VOLTAR</a>
     
     <section id="detalhesVideos">Detalhes do Vídeo</section>
     <section>
         <ul>
             <div>
-            <img src= "<%= video.imagem %>" alt= "<%= video.nome %>" width = "200"/>
+                <iframe src="<%= video.link %>" ></iframe>
             </div>
             <div>Titulo: <%= video.titulo %></div>
             <div>Descrição do conteúdo: <%= video.descricao %></div>
             <div>Tipo de Conteúdo: <%= video.tipo %></div>
             <div>Nota: <%= video.nota %></div>
             <div>Link: <%= video.link %></div>
+            
+            <button>
+            <a href = "<%= video.link %>" target="_blank">ASSISTA NO YOUTUBE</a></button>
         </ul>
     </section>
     <section>
