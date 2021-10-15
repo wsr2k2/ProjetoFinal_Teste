@@ -11,64 +11,74 @@
   
   <body id="body_cadastro">
     <section>
-      <h1 id="cadastro1">CADASTRO DE FILMES</h1>
+      <h1 id="cadastro1">CADASTRO DE LIVROS</h1>
     </section>
     <section id="cadastro">
-      <form action="/newFilme" method="POST">
+      <form action="/newCarro" method="POST">
         <div>
-          <label for="titulo">Título:</label>
+          <label for="marca">Marca:</label>
           <input
             type="text"
-            name="titulo"
-            id="titulo"
-            placeholder="Nome do filme"
+            name="marca"
+            id="marca"
+            placeholder="Marca"
             required
           />
         </div>
         <div>
-          <label for="ano">Ano:</label>
+          <label for="modelo">Modelo:</label>
+          <input
+            type="text"
+            name="modelo"
+            id="modelo"
+            placeholder="Modelo"
+            required
+          />
+        </div>
+        <div>
+          <label for="potencia">Potência:</label>
           <input
             type="number"
-            name="ano"
-            id="ano"
-            placeholder="Ano de Lançamento"
+            name="potencia"
+            id="potencia"
+            placeholder="Potência"
             required
           />
         </div>
         <div>
-          <label for="genero">Genero:</label>
+          <label for="velocidade">Velocidade:</label>
           <input
-            type="text"
-            name="genero"
-            id="genero"
-            placeholder="Genero"
+            type="number"
+            name="velocidade"
+            id="velocidade"
+            placeholder="velocidade"
             required
           />
         </div>
         <div>
-          <label for="duracao">Duração:</label>
+          <label for="zeroCem">De 0 à 100km:</label>
           <input
-            type="text"
-            name="duracao"
-            id="duracao"
-            placeholder="Duração"
+            type="float"
+            name="zeroCem"
+            id="zeroCem"
+            placeholder="0 à 100km em seg"
             required
           />
         </div>
         <div>
-          <label for="sinopse">Sinopse:</label>
+          <label for="descricao">Descrição:</label>
           <input
             type="text"
-            name="sinopse"
-            id="sinopse"
-            placeholder="Sinopse do filme"
+            name="descricao"
+            id="descricao"
+            placeholder="descricao"
             required
           />
         </div>
         <div>
           <label for="note">Nota:</label>
           <input
-            type="float"
+            type="float.number"
             name="nota"
             id="nota"
             placeholder="Nota"
@@ -86,16 +96,15 @@
           />
         </div>
         <div>
-          <label for="trailer">Trailer:</label>
+          <label for="site">Site Montadora:</label>
           <input
             type="url"
-            name="trailer"
-            id="trailer"
-            placeholder="Link do trailer"
+            name="site"
+            id="site"
+            placeholder="Site da Montadora"
             required
           />
         </div>
-        
         <button type="submit" id="enviar">Enviar</button>
       </form>
     </section>

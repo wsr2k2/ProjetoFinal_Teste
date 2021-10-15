@@ -11,27 +11,37 @@
   
   <body id="body_cadastro">
     <section>
-      <h1 id="cadastro1">CADASTRO DE FILMES</h1>
+      <h1 id="cadastro1">CADASTRO DE LIVROS</h1>
     </section>
     <section id="cadastro">
-      <form action="/newFilme" method="POST">
+      <form action="/newLivro" method="POST">
         <div>
           <label for="titulo">Título:</label>
           <input
             type="text"
             name="titulo"
             id="titulo"
-            placeholder="Nome do filme"
+            placeholder="Nome do livro"
             required
           />
         </div>
         <div>
-          <label for="ano">Ano:</label>
+          <label for="idioma">Idioma:</label>
           <input
-            type="number"
-            name="ano"
-            id="ano"
-            placeholder="Ano de Lançamento"
+            type="text"
+            name="idioma"
+            id="idioma"
+            placeholder="Idioma"
+            required
+          />
+        </div>
+        <div>
+          <label for="autor">Autor:</label>
+          <input
+            type="text"
+            name="autor"
+            id="autor"
+            placeholder="Autor"
             required
           />
         </div>
@@ -46,12 +56,12 @@
           />
         </div>
         <div>
-          <label for="duracao">Duração:</label>
+          <label for="paginas">Páginas:</label>
           <input
-            type="text"
-            name="duracao"
-            id="duracao"
-            placeholder="Duração"
+            type="number"
+            name="paginas"
+            id="paginas"
+            placeholder="Páginas"
             required
           />
         </div>
@@ -61,7 +71,7 @@
             type="text"
             name="sinopse"
             id="sinopse"
-            placeholder="Sinopse do filme"
+            placeholder="Sinopse"
             required
           />
         </div>
@@ -85,17 +95,6 @@
             required
           />
         </div>
-        <div>
-          <label for="trailer">Trailer:</label>
-          <input
-            type="url"
-            name="trailer"
-            id="trailer"
-            placeholder="Link do trailer"
-            required
-          />
-        </div>
-        
         <button type="submit" id="enviar">Enviar</button>
       </form>
     </section>

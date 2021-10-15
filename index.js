@@ -98,7 +98,7 @@ let videos = [
         descricao: "Cover versão metal da música God Save The Queen dos Sex Pistols",
         tipo: "Vídeo Clipe",
         nota: 10,
-        link: "https://www.youtube.com/watch?v=Qep9mynlyTg",
+        link: "https://www.youtube.com/embed/Qep9mynlyTg",
         imagem: "https://i1.wp.com/multarte.com.br/wp-content/uploads/2020/05/371903520_social_icons_youtube.png?fit=696%2C696&ssl=1"  
 },
 {
@@ -206,7 +206,66 @@ app.post("/newFilme", (req, res) => {
     
   res.redirect("/series");
   })
+  
+  app.get("/cadastroLivro", (req, res) => {
+    res.render("cadastroLivro")
+  })
+  
+  app.post("/newLivro", (req, res) => {
+    const {titulo, idioma, autor, genero, paginas, sinopse, nota, imagem} = req.body;
+    const novoLivro = {
+      titulo: titulo,
+      idioma: idioma,
+      autor: autor,
+      genero: genero,
+      paginas: paginas,
+      sinopse: sinopse,
+      nota: nota,
+      imagem: imagem
+    }
+    livros.push(novoLivro);
+    
+  res.redirect("/livros");
+  })
 
+  app.get("/cadastroCarro", (req, res) => {
+    res.render("cadastroCarro")
+  })
+  
+  app.post("/newCarro", (req, res) => {
+    const {marca, modelo, potencia, velocidade, zeroCem, descricao, nota, imagem} = req.body;
+    const novoCarro = {
+      marca: marca,
+      modelo: modelo,
+      potencia: potencia,
+      velocidade: velocidade,
+      zeroCem: zeroCem,
+      descricao: descricao,
+      nota: nota,
+      imagem: imagem
+    }
+    carros.push(novoCarro);
+    
+  res.redirect("/carros");
+  })
+
+  app.get("/cadastroVideo", (req, res) => {
+    res.render("cadastroVideo")
+  })
+  
+  app.post("/newVideo", (req, res) => {
+    const {titulo, descricao, tipo, nota, link} = req.body;
+    const novoVideo = {
+      titulo: titulo,
+      descricao: descricao,
+      tipo: tipo,
+      nota: nota,
+      link: link
+    }
+    videos.push(novoVideo);
+    
+  res.redirect("/videos");
+  })
   app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)
 );

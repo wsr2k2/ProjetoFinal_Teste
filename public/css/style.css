@@ -8,7 +8,7 @@ body{
     color: white;
 }
 .header{
-    background: #8d0505,#520606;
+    background: ;
     padding: 12px;
     color: black;
     font-size: larger;
@@ -83,11 +83,11 @@ section#cadastro {
     margin: 0 20rem 10rem 20rem;
     box-shadow: 0 0 1rem #00000060;
     border-radius: 1rem;
-  }
+}
 section#cadastro form {
     width: 100%;
     padding: 2rem;
-  }
+}
 section#cadastro form div input {
     width: 100%;
     padding: 1rem;
@@ -96,14 +96,14 @@ section#cadastro form div input {
     margin-bottom: 1rem;
     outline: none;
     border: 0.1rem solid #ccc;
-  }
+}
   
-  section#cadastro form div label {
+section#cadastro form div label {
     font-size: 1.3rem;
     color: red;
-  }
+}
   
-  section#cadastro form button {
+section#cadastro form button {
     border: 1px solid red;
     background-color: #fff;
     color: red;
@@ -117,23 +117,20 @@ section#cadastro form div input {
     cursor: pointer;
     transition: 0.3s ease-out;
     width: 40%;
-  }
-  
-  section#cadastro form button:hover {
+}
+section#cadastro form button:hover {
     background-color: rgb(136, 139, 137);
     color: #fff;
     transform: scale(1.1);
-  }
-  #cadastro1{
+}
+#cadastro1{
       text-align: center;
       padding: 20px;
-  }
-  #detalhes1{
+}
+#detalhes1{
     padding: 30px;
     margin: 50px 500px;
     text-align: center;    
     border-radius: 25px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-       
+    font-family: Georgia, 'Times New Roman', Times, serif;     
 }
-

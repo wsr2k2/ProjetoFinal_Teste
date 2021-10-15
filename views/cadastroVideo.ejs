@@ -14,54 +14,34 @@
       <h1 id="cadastro1">CADASTRO DE FILMES</h1>
     </section>
     <section id="cadastro">
-      <form action="/newFilme" method="POST">
+      <form action="/newVideo" method="POST">
         <div>
           <label for="titulo">Título:</label>
           <input
             type="text"
             name="titulo"
             id="titulo"
-            placeholder="Nome do filme"
+            placeholder="Nome do vídeo"
             required
           />
         </div>
         <div>
-          <label for="ano">Ano:</label>
-          <input
-            type="number"
-            name="ano"
-            id="ano"
-            placeholder="Ano de Lançamento"
-            required
-          />
-        </div>
-        <div>
-          <label for="genero">Genero:</label>
+          <label for="descricao">Descrição:</label>
           <input
             type="text"
-            name="genero"
-            id="genero"
-            placeholder="Genero"
+            name="descricao"
+            id="descricao"
+            placeholder="Descricao"
             required
           />
         </div>
         <div>
-          <label for="duracao">Duração:</label>
+          <label for="tipo">Tipo de Conteúdo:</label>
           <input
             type="text"
-            name="duracao"
-            id="duracao"
-            placeholder="Duração"
-            required
-          />
-        </div>
-        <div>
-          <label for="sinopse">Sinopse:</label>
-          <input
-            type="text"
-            name="sinopse"
-            id="sinopse"
-            placeholder="Sinopse do filme"
+            name="tipo"
+            id="tipo"
+            placeholder="Tipo de conteúdo"
             required
           />
         </div>
@@ -76,26 +56,15 @@
           />
         </div>
         <div>
-          <label for="imagem">Imagem:</label>
+          <label for="link">Link do Vídeo:</label>
           <input
             type="url"
-            name="imagem"
-            id="imagem"
-            placeholder="Link da imagem"
+            name="link"
+            id="link"
+            placeholder="Link do vídeo"
             required
           />
         </div>
-        <div>
-          <label for="trailer">Trailer:</label>
-          <input
-            type="url"
-            name="trailer"
-            id="trailer"
-            placeholder="Link do trailer"
-            required
-          />
-        </div>
-        
         <button type="submit" id="enviar">Enviar</button>
       </form>
     </section>
