@@ -16,7 +16,7 @@ let filmes = [
         sinopse: "Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal. Para isso, o hobbit Frodo tem um caminho árduo pela frente, onde encontra perigo, medo e seres bizarros. Ao seu lado para o cumprimento desta jornada, ele aos poucos pode contar com outros hobbits, um elfo, um anão, dois humanos e um mago, totalizando nove pessoas que formam a Sociedade do Anel.",
         nota: 10,
         imagem: "/img/aneis.jpg",
-        trailer: "https://www.youtube.com/watch?v=V75dMMIW2B4"   
+        trailer: "https://www.youtube.com/embed/V75dMMIW2B4"   
 },
     {
         id: 002,
@@ -27,7 +27,7 @@ let filmes = [
         sinopse: "Após a captura de Merry e Pippy pelos orcs, a Sociedade do Anel é dissolvida. Frodo e Sam seguem sua jornada rumo à Montanha da Perdição para destruir o anel e descobrem que estão sendo perseguidos pelo misterioso Gollum. Enquanto isso, Aragorn, o elfo e arqueiro Legolas e o anão Gimli partem para resgatar os hobbits sequestrados e chegam ao reino de Rohan, onde o rei Theoden foi vítima de uma maldição mortal de Saruman.",
         nota: 10,
         imagem: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/20eUL6eN89SM0U7KPDw8iR82mOT.jpg",
-        trailer: url= "https://www.youtube.com/watch?v=hYcw5ksV8YQ"
+        trailer: url= "https://www.youtube.com/embed/hYcw5ksV8YQ"
 },
 {
         id: 003,
@@ -38,7 +38,7 @@ let filmes = [
         sinopse: "O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima. Sauron planeja um grande ataque a Minas Tirith, capital de Gondor, o que faz com que Gandalf e Pippin partam para o local na intenção de ajudar a resistência. Um exército é reunido por Theoden em Rohan, em mais uma tentativa de deter as forças de Sauron. Enquanto isso, Frodo, Sam e Gollum seguem sua viagem rumo à Montanha da Perdição para destruir o anel.",
         nota: 10,
         imagem: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/izPNMzffsgZUvlbiYlPxjFr3TAa.jpg",
-        trailer: "https://www.youtube.com/watch?v=r5X-hFf6Bwo"
+        trailer: "https://www.youtube.com/embed/r5X-hFf6Bwo"
 }];
 
 let series = [
@@ -52,7 +52,7 @@ let series = [
         sinopse: "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
         nota: 10,
         imagem: "https://upload.wikimedia.org/wikipedia/pt/thumb/f/f6/Dark_%28s%C3%A9rie%29.jpg/200px-Dark_%28s%C3%A9rie%29.jpg",
-        trailer: "https://www.youtube.com/watch?v=JCCssUOtn2E"   
+        trailer: "https://www.youtube.com/embed/JCCssUOtn2E"   
 },
 {
     id: 002,
@@ -64,7 +64,7 @@ let series = [
     sinopse: "O ex-marine Frank Castle só quer punir os criminosos responsáveis pela morte da sua família, mas torna-se alvo de uma conspiração militar.",
     nota: 10,
     imagem: "https://br.web.img3.acsta.net/pictures/17/10/19/14/40/3658022.jpg",
-    trailer: "https://www.youtube.com/watch?v=flVhhEmkNKM"   
+    trailer: "https://www.youtube.com/embed/Bf8yGbn0__s"   
 }];
 let livros = [
     {

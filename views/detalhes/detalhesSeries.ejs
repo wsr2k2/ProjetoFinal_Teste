@@ -27,7 +27,11 @@
             <div>Episódios: <%= serie.episodios %></div>
             <div>Sinopse: <%= serie.sinopse %></div>
             <div>Nota: <%= serie.nota %></div>
-            <div>Trailer: <%= serie.trailer %> </div>
+            <div>
+                <iframe src="<%= serie.trailer %>" ></iframe>
+            </div>
+            <button>
+                <a href = "<%= serie.trailer %>" target="_blank">ASSISTA NO YOUTUBE</a></button>
         </ul>
     </section>
     <section>

@@ -15,18 +15,23 @@
         <div id="stars3"></div>
         <div id="title"></div>
     
-<section id="detalhes1">
+<section id="">
         <ul>
             <div>
             <img src= "<%= filme.imagem %>" alt= "<%= filme.nome %>" width = "200"/ id="fotosDetalhes">
             </div>
+            
             <div class="detalhes2">Titulo: <%= filme.titulo %></div>
             <div>Ano de Lançamento: <%= filme.ano %></div>
             <div>Genero: <%= filme.genero %></div>
             <div>Duração: <%= filme.duracao %></div>
             <div>Sinopse: <%= filme.sinopse %></div>
             <div>Nota: <%= filme.nota %></div>
-            <div>Trailer: <%= filme.trailer %> </div>
+            <div>
+                <iframe src="<%= filme.trailer %>" ></iframe>
+            </div>
+            <button>
+                <a href = "<%= filme.trailer %>" target="_blank">ASSISTA NO YOUTUBE</a></button>
         </ul>
     </section>
     <section>
