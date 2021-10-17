@@ -5,10 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css"/>
-    <title>Document</title>
+    <title>Detalhe</title>
 </head>
+
+<header class="header">
+    <div class="center">
+      <div class="menu" id="menuId" > 
+        <ul id="navegacao">
+          <li><a  href="/"><strong">INICIO</strong></li>
+          <li><a href="/filmes">FILMES</li>
+          <li><a href="/series">SERIES</li>
+          <li><a href="/livros">LIVROS</li>
+          <li><a href="/carros">CARROS</li>
+          <li><a href="/videos">VIDEOS</li>
+        </ul>
+      </div>
+</header>
+
 <body>
-    <a href="/filmes">VOLTAR</a>
+    
     <section class="wrapper">
         <div id="stars"></div>
         <div id="stars2"></div>
@@ -17,27 +32,23 @@
     
 <section id="">
         <ul>
-            <div>
-            <img src= "<%= filme.imagem %>" alt= "<%= filme.nome %>" width = "200"/ id="fotosDetalhes">
-            </div>
             
-            <div class="detalhes2">Titulo: <%= filme.titulo %></div>
-            <div>Ano de Lançamento: <%= filme.ano %></div>
-            <div>Genero: <%= filme.genero %></div>
-            <div>Duração: <%= filme.duracao %></div>
-            <div>Sinopse: <%= filme.sinopse %></div>
-            <div>Nota: <%= filme.nota %></div>
-            <div>
-                <iframe src="<%= filme.trailer %>" ></iframe>
+            <div class="detalhes2">
+                <a><img src="/img/trash.png" class="buttonEdit"></a>
+                <a><img src="/img/edit.png" class="buttonEdit"></a>
+                <a href="/filmes"><img src="/img/closed.png"  id="closed"></a>
+                <img src= "<%= filme.imagem %>" alt= "<%= filme.nome %>" width = "200" class="fotosDetalhes">                  
+                <div class="itemTitulo">Titulo: <%= filme.titulo %></div>
+                <div class="itemInfo"><strong> Ano de Lançamento: </strong><%= filme.ano %></div>
+                <div class="itemInfo"><strong> Genero: </strong> <%= filme.genero %></div>
+                <div class="itemInfo"><strong> Duração: </strong><%= filme.duracao %></div>
+                <div class="itemInfo"><strong> Sinopse: </strong><%= filme.sinopse %></div>
+                <div class="itemInfo"><strong> Nota: </strong><%= filme.nota %></div>
+                <div class="itemFrame"> <iframe src="<%= filme.trailer %>" ></iframe> </div>
+                <button class="buttonYt"><a href = "<%= filme.trailer %>" target="_blank" class="yt">ASSISTA NO YOUTUBE</a></button>
             </div>
-            <button>
-                <a href = "<%= filme.trailer %>" target="_blank">ASSISTA NO YOUTUBE</a></button>
         </ul>
-    </section>
-    <section>
-        <button name="deletar"> DELETAR</button>
-        <button name="editarx"> EDITAR</button>
-    </section>
+</section>
     <script src="/js/script.js"></script>
 </body>
 </html>
