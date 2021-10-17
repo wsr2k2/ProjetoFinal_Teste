@@ -81,8 +81,7 @@ center{
   background: linear-gradient(0, #520606,#ff0000a2);
   align-items: center;
   width: 1000px;
-  position: relative;
-  position: absolute;
+ 
   top: 57%;
   left: 50%;
   margin-right: -50%;
