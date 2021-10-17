@@ -2,21 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
-}
-html {
-  height: 100%;
-  overflow: hidden;
-  background: radial-gradient(ellipse at bottom, #b10707 0%,#350404 100%);
 }
 
 .header{
-    
+    /* background: ; */
     padding: 12px;
     color: black;
     font-size: larger;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  
+    font-family: Georgia, 'Times New Roman', Times, serif;    
 }
 .menu{
     display: inline-block;
@@ -89,8 +82,6 @@ center{
   margin-right: -50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
- 
-      
 }
 .itemTitulo{
   text-align: center;
@@ -250,7 +241,11 @@ section#cadastro form div input {
 
 
 
-
+html {
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #b10707 0%,#350404 100%);
+}
 
 #title {
   position: absolute;
@@ -857,7 +852,6 @@ section#cadastro form div input {
       transform: translateY(-2000px);
   }
 }
-
 
 
 
