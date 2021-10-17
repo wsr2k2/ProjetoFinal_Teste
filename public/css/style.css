@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow:auto;
-    height:100%
+   
 }
 
 
@@ -12,7 +11,9 @@
     padding: 12px;
     color: black;
     font-size: larger;
-    font-family: Georgia, 'Times New Roman', Times, serif;    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow:auto;
+    height:100%
 }
 .menu{
     display: inline-block;
