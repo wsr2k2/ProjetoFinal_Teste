@@ -88,6 +88,8 @@ center{
   margin-right: -50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
+     overflow:auto;
+    height:100%
       
 }
 .itemTitulo{
