@@ -28,7 +28,7 @@
     font-weight: bold;
 }
 center{
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .container{
@@ -74,7 +74,7 @@ center{
 .detalhes2{
   background: linear-gradient(0, #520606,#ff0000a2);
   align-items: center;
-  width: 800px;
+  width: 1000px;
   position: relative;
   position: absolute;
   top: 57%;
@@ -243,7 +243,7 @@ section#cadastro form div input {
 
 html {
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background: radial-gradient(ellipse at bottom, #b10707 0%,#350404 100%);
 }
 
