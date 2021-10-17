@@ -4,13 +4,9 @@
     box-sizing: border-box;
    
 }
-.barra{
-    overflow:auto;
-    height:100%
-}
 
 .header{
-    /* background: ; */
+    
     padding: 12px;
     color: black;
     font-size: larger;
@@ -81,14 +77,14 @@ center{
   background: linear-gradient(0, #520606,#ff0000a2);
   align-items: center;
   width: 1000px;
- 
+  position: relative;
+  position: absolute;
   top: 57%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-     overflow:auto;
-    height:100%
+ 
       
 }
 .itemTitulo{
@@ -249,11 +245,7 @@ section#cadastro form div input {
 
 
 
-html {
-  height: 100%;
-  overflow: hidden;
-  background: radial-gradient(ellipse at bottom, #b10707 0%,#350404 100%);
-}
+
 
 #title {
   position: absolute;
