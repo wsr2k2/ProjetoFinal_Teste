@@ -4,6 +4,27 @@
   box-sizing: border-box;
 }
 
+.btn_cadastro{
+  background-color: #e22503; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_cadastro:hover {
+  background-color: #f44336;
+  color: white;
+}
+
 .header{
   /* background: ; */
   padding: 12px;
@@ -80,7 +101,7 @@ position: absolute;
 top: 57%;
 left: 50%;
 margin-right: -50%;
-transform: translate(-50%, -50%);
+transform: translate(-50%, -35%);
 border-radius: 10px;
 }
 .itemTitulo{
@@ -229,6 +250,7 @@ section#cadastro form button:hover {
 #cadastro1{
     text-align: center;
     padding: 20px;
+    color: white;
 }
 #detalhes1{
   padding: 30px;
@@ -243,7 +265,7 @@ section#cadastro form button:hover {
 
 html {
 height: 100%;
-overflow: hidden;
+overflow: auto;
 background: radial-gradient(ellipse at bottom, #b10707 0%,#350404 100%);
 }
 

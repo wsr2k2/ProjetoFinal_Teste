@@ -5,29 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Meu catalogo</title>
+    <link rel="icon" type="iconFilme/img" href="/img/iconFilme.png" />
+    <title>Filmes</title>
 </head>
+<header class="header">
+  <div class="center">
+    <div class="menu" id="menuId" > 
+      <ul id="navegacao">
+        <li><a  href="/"><strong">INICIO</strong></li>
+        <li><a href="filmes">FILMES</li>
+        <li><a href="series">SERIES</li>
+        <li><a href="livros">LIVROS</li>
+        <li><a href="carros">CARROS</li>
+        <li><a href="videos">VIDEOS</li>
+        <li><button class="btn_cadastro"><a href="/cadastroFilme">CADASTRAR FILME</li></button>
+      </ul>
+    </div>
+</header>
 <body class="">
   <section class="wrapper">
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
     <div id="title"></div>
-
-    <header class="header">
-      <div class="center">
-        <div class="menu" id="menuId" > 
-          <ul id="navegacao">
-            <li><a  href="/"><strong">INICIO</strong></li>
-            <li><a href="filmes">FILMES</li>
-            <li><a href="series">SERIES</li>
-            <li><a href="livros">LIVROS</li>
-            <li><a href="carros">CARROS</li>
-            <li><a href="videos">VIDEOS</li>
-          </ul>
-        </div>
-    </header>
-
 <section class="container">
   <% filmes.forEach((item, id) => { %>
   <ul>
