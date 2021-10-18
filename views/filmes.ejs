@@ -13,28 +13,28 @@
     <div id="stars2"></div>
     <div id="stars3"></div>
     <div id="title"></div>
-  <header class="header">
-    <div class="center">
-      <div class="menu" id="menuIdfilmes">
-        <ul class="navegacao">
-          <li><a href="/">INICIO</li>
-          <li><a href="filmes">FILMES</li>
-          <li><a href="series">SERIES</li>
-          <li><a href="livros">LIVROS</li>
-          <li><a href="carros">CARROS</li>
-          <li><a href="videos">VIDEOS</li>
-          <li><a href="cadastroFilme">CADASTRAR</li>
-        </ul>
-      </div>
-    </div>
-  </header>
+
+    <header class="header">
+      <div class="center">
+        <div class="menu" id="menuId" > 
+          <ul id="navegacao">
+            <li><a  href="/"><strong">INICIO</strong></li>
+            <li><a href="filmes">FILMES</li>
+            <li><a href="series">SERIES</li>
+            <li><a href="livros">LIVROS</li>
+            <li><a href="carros">CARROS</li>
+            <li><a href="videos">VIDEOS</li>
+          </ul>
+        </div>
+    </header>
 
 <section class="container">
   <% filmes.forEach((item, id) => { %>
   <ul>
     <div>
       <a href="/detalhes/detalhesFilmes/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />   
+        <p><h2 class="nameItem"> <%= item.titulo %></h2></p>     
   </ul>
   <% }) %>
 </section>
