@@ -1,4 +1,5 @@
 *{
+<<<<<<< HEAD
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,6 +11,19 @@
   color: black;
   font-size: larger;
   font-family: Georgia, 'Times New Roman', Times, serif;    
+=======
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    /* background: ; */
+    padding: 12px;
+    color: black;
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;    
+>>>>>>> 4133c6068e59a83bef82cf3ab551aef790049cf5
 }
 .menu{
   display: inline-block;
@@ -62,6 +76,7 @@ transform: scale(1.1);
   width: 200px;
 } 
 .nameItem{
+<<<<<<< HEAD
 color: white;
 text-decoration: none;
 text-align: justify;
@@ -175,6 +190,121 @@ color: #000000;
 .buttons :hover{
   transform: scale(1.05);
   transition: ease 0.2s;
+=======
+  color: white;
+  text-decoration: none;
+  text-align: justify;
+}
+.fotosDetalhes {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+.detalhes2{
+  background: linear-gradient(0, #520606,#ff0000a2);
+  align-items: center;
+  width: 1000px;
+  position: relative;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+.itemTitulo{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+ 
+}
+.itemInfo{
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  text-align: justify;
+  margin: 20px;
+}
+.itemFrame{
+   width: 300px;  
+   display: block;
+   margin-left: auto;
+   margin-right: auto 
+}
+#closed{ 
+  max-width:80px;
+  max-height:70px;
+  width: auto;
+  height: auto;
+  margin-left: 70%;
+  
+}
+#closed:hover{
+   transition: all 0.5s;
+   cursor: pointer;
+   -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(82, 4, 4, 0.5));
+}
+.buttonEdit:hover{
+  transform: scale(1.05);
+  transition: ease 0.2s;
+  transition: all 0.5s;
+  cursor: pointer;
+   -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+   filter: drop-shadow(15px 10px 5px rgba(82, 4, 4, 0.5));
+}
+
+.buttonEdit{
+  max-width:80px;
+  max-height:70px;
+  width: auto;
+  height: auto;
+  align-items: flex-end;
+}
+
+.buttonYt{
+  background-color: #ac1111;
+  border: 2px solid #000000;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-color: black;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:  8px;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buttonEdit:hover{
+  transform: scale(1.05);
+  transition: ease 0.2s;
+  transition: all 0.5s;
+  cursor: pointer;
+   -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+   filter: drop-shadow(15px 10px 5px rgba(82, 4, 4, 0.5));
+}
+
+.yt{
+  text-decoration: none;
+  color: #000000;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.buttons :hover{
+    transform: scale(1.05);
+    transition: ease 0.2s;
+>>>>>>> 4133c6068e59a83bef82cf3ab551aef790049cf5
 }
 section#cadastro {
   padding: 1rem;
@@ -242,9 +372,15 @@ section#cadastro form button:hover {
 
 
 html {
+<<<<<<< HEAD
 height: 100%;
 overflow: auto;
 background: radial-gradient(ellipse at bottom, #b10707 0%,#350404 100%);
+=======
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #b10707 0%,#350404 100%);
+>>>>>>> 4133c6068e59a83bef82cf3ab551aef790049cf5
 }
 
 #title {
@@ -284,6 +420,25 @@ z-index: 1;
 .navegacao { 
 text-align: center;
 line-height: 60px;
+
+}
+
+#menuId {
+  width:100%;
+  height: 70px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  background: linear-gradient(0, #520606,#ff0000);
+  border-radius: 10px 10px 10px 10px;
+  border-style:groove;
+  border-color: #690000;
+  z-index: 1;
+}
+#navegacao { 
+  text-align: center;
+  line-height: 60px;
 
 }
 
@@ -852,6 +1007,5 @@ to {
     transform: translateY(-2000px);
 }
 }
-
 
 
