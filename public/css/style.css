@@ -103,6 +103,7 @@ left: 50%;
 margin-right: -50%;
 transform: translate(-50%, -35%);
 border-radius: 10px;
+margin-top: 10%;
 }
 .itemTitulo{
 text-align: center;
