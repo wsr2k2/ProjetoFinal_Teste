@@ -1,45 +1,15 @@
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
+const db = require('./model/database');
+const Filmes = require('./model/Filmes');
 app.use(express.urlencoded());
 
-let filmes = [
-    {
-        id: 001,
-        titulo: "O Senhor dos Anéis - A Sociedade do Anel",
-        ano: 2001,
-        genero: "Aventura, Ficção, Ação",
-        duracao: "2h 59m",
-        sinopse: "Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal. Para isso, o hobbit Frodo tem um caminho árduo pela frente, onde encontra perigo, medo e seres bizarros. Ao seu lado para o cumprimento desta jornada, ele aos poucos pode contar com outros hobbits, um elfo, um anão, dois humanos e um mago, totalizando nove pessoas que formam a Sociedade do Anel.",
-        nota: 10,
-        imagem: "/img/aneis.jpg",
-        trailer: "https://www.youtube.com/embed/V75dMMIW2B4"   
-},
-    {
-        id: 002,
-        titulo: "O Senhor dos Anéis - As Duas Torres",
-        ano: 2002,
-        genero: "Aventura, Ficção, Ação",
-        duracao: "3h",
-        sinopse: "Após a captura de Merry e Pippy pelos orcs, a Sociedade do Anel é dissolvida. Frodo e Sam seguem sua jornada rumo à Montanha da Perdição para destruir o anel e descobrem que estão sendo perseguidos pelo misterioso Gollum. Enquanto isso, Aragorn, o elfo e arqueiro Legolas e o anão Gimli partem para resgatar os hobbits sequestrados e chegam ao reino de Rohan, onde o rei Theoden foi vítima de uma maldição mortal de Saruman.",
-        nota: 10,
-        imagem: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/20eUL6eN89SM0U7KPDw8iR82mOT.jpg",
-        trailer: url= "https://www.youtube.com/embed/hYcw5ksV8YQ"
-},
-{
-        id: 003,
-        titulo: "O Senhor dos Anéis - O Retorno do Rei",
-        ano: 2003,
-        genero: "Aventura, Ficção, Ação",
-        duracao: "3h 22m",
-        sinopse: "O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima. Sauron planeja um grande ataque a Minas Tirith, capital de Gondor, o que faz com que Gandalf e Pippin partam para o local na intenção de ajudar a resistência. Um exército é reunido por Theoden em Rohan, em mais uma tentativa de deter as forças de Sauron. Enquanto isso, Frodo, Sam e Gollum seguem sua viagem rumo à Montanha da Perdição para destruir o anel.",
-        nota: 10,
-        imagem: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/izPNMzffsgZUvlbiYlPxjFr3TAa.jpg",
-        trailer: "https://www.youtube.com/embed/r5X-hFf6Bwo"
-}];
+
 
 let series = [
     {
@@ -111,11 +81,12 @@ let videos = [
        
 }];
 app.get("/", (req, res) => {
-    res.render("index", { titulo: "filmes", filmes: filmes , titulo: "series", series: series, titulo: "livros", livros: livros, titulo: "carros", carros: carros, titulo: "videos", videos: videos });     
+    res.render("index", { titulo: "filmes", filmes: "" , titulo: "series", series: series, titulo: "livros", livros: livros, titulo: "carros", carros: carros, titulo: "videos", videos: videos });     
 });
 
-app.get("/filmes", (req, res) => {
-    res.render("filmes",{ titulo: "filmes", filmes: filmes});    
+app.get("/filmes", async (req, res) => {
+  const filmes = await Filmes.findAll()   
+  res.render("filmes",{ Filmes: filmes});    
 });
 
 app.get("/series", (req, res) => {
@@ -165,12 +136,12 @@ app.get("/detalhes/detalhesVideos/:id", (req, res) => {
 });
 
 app.get("/cadastroFilme", (req, res) => {
-    res.render("cadastroFilme")
+    res.render("../views/cadastroFilme")
   })
   
-app.post("/newFilme", (req, res) => {
+app.post("/newFilme", async (req, res) => {
     const {titulo, ano, genero, duracao, sinopse, nota, imagem, trailer} = req.body;
-    const novoFilme = {
+    const filmes = await Filmes.create ({
       titulo: titulo,
       ano: ano,
       genero: genero,
@@ -179,9 +150,8 @@ app.post("/newFilme", (req, res) => {
       nota: nota,
       imagem: imagem,
       trailer: trailer
-    }
-    filmes.push(novoFilme);
-    
+    })
+        
   res.redirect("/filmes");
   })
 
@@ -270,6 +240,8 @@ app.post("/newFilme", (req, res) => {
   app.get("/teste", (req, res) => {
     res.render("teste")
   })
+
+  db.conectado();
 
   app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)

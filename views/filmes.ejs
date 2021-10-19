@@ -29,12 +29,12 @@
     <div id="stars3"></div>
     <div id="title"></div>
 <section class="container">
-  <% filmes.forEach((item, id) => { %>
+  <% Filmes.forEach(item  => { %>
   <ul>
     <div>
-      <a href="/detalhes/detalhesFilmes/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />   
-        <p><h2 class="nameItem"> <%= item.titulo %></h2></p>     
+      <a href="/detalhes/detalhesFilmes/">         
+        <p><h2 class="nameItem"> <%= item.titulo %></h2></p>
+        <h1><%= item.ID %></h1>     
   </ul>
   <% }) %>
 </section>
