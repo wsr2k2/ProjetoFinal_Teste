@@ -20,25 +20,25 @@ app.get("/", (req, res) => {
 
 app.get("/filmes", async (req, res) => {
   const filmes = await Filmes.findAll()   
-  res.render("filmes",{ Filmes: filmes});    
+  res.render("../controller/filmes",{ Filmes: filmes});    
 });
 
 app.get("/series", async (req, res) => {
   const series = await Series.findAll()   
-  res.render("series",{ Series: series});    
+  res.render("../controller/series",{ Series: series});    
 });
 
 app.get("/livros", async (req, res) => {
   const livros = await Livros.findAll()   
-  res.render("livros",{ Livros: livros});    
+  res.render("../controller/livros",{ Livros: livros});    
 });
 app.get("/carros", async (req, res) => {
   const carros = await Carros.findAll()   
-  res.render("carros",{ Carros: carros});    
+  res.render("../controller/carros",{ Carros: carros});    
 });
 app.get("/videos", async (req, res) => {
   const videos = await Videos.findAll()   
-  res.render("videos",{ Videos: videos});    
+  res.render("../controller/videos",{ Videos: videos});    
 });
 
 app.get("/detalhes/detalhesFilmes/:id", async (req, res) => {
@@ -67,7 +67,7 @@ app.get("/detalhes/detalhesVideos/:id", async (req, res) => {
 });
 
 app.get("/cadastroFilme", (req, res) => {
-    res.render("../views/cadastroFilme")
+    res.render("../controller/cadastroFilme")
   })
   
 app.post("/newFilme", async (req, res) => {
@@ -86,7 +86,7 @@ app.post("/newFilme", async (req, res) => {
   })
 
 app.get("/cadastroSerie", (req, res) => {
-    res.render("../views/cadastroSerie")
+    res.render("../controller/cadastroSerie")
   })
   
 app.post("/newSerie", async (req, res) => {
@@ -105,7 +105,7 @@ app.post("/newSerie", async (req, res) => {
 })
 
 app.get("/cadastroLivro", (req, res) => {
-  res.render("../views/cadastroLivro")
+  res.render("../controller/cadastroLivro")
 })
 
 app.post("/newLivro", async (req, res) => {
@@ -124,7 +124,7 @@ res.redirect("/livros");
 })
 
 app.get("/cadastroCarro", (req, res) => {
-  res.render("../views/cadastroCarro")
+  res.render("../controller/cadastroCarro")
 })
 
 app.post("/newCarro", async (req, res) => {
@@ -144,7 +144,7 @@ res.redirect("/carros");
 })
   
 app.get("/cadastroVideo", (req, res) => {
-  res.render("../views/cadastroVideo")
+  res.render("../controller/cadastroVideo")
 })
 
 app.post("/newVideo", async (req, res) => {
@@ -169,6 +169,59 @@ app.get('/filmedelete/:id', async (req,res) => {
   await filme.destroy();
 
   res.redirect("/filmes");
+});
+
+app.get('/seriedelete/:id', async (req,res) => {
+  const serie = await Series.findByPk(req.params.id);
+
+  await serie.destroy();
+
+  res.redirect("/series");
+});
+
+
+app.get('/filmeedit/:id', async (req,res) => {
+  const filme = await Filmes.findByPk(req.params.id);
+  res.render("../controller/cadastroFilme", {filme: filme});
+});
+
+app.post('/filmeedit/:id', async (req,res) =>{
+  const filme = await Filmes.findByPk(req.params.id);
+  const { titulo, ano, genero, duracao, sinopse, nota, imagem, trailer} = req.body;
+  
+  filme.titulo = titulo;
+  filme.ano = ano;
+  filme.genero = genero;
+  filme.duracao = duracao;
+  filme.sinopse = sinopse;
+  filme.nota = nota;
+  filme.imagem = imagem;
+  filme.trailer = trailer
+
+  await filme.save();
+  res.redirect("/filmes");
+});
+
+app.get('/serieedit/:id', async (req,res) => {
+  const serie = await Filmes.findByPk(req.params.id);
+  res.render("../controller/cadastroSerie", {serie: serie});
+});
+
+app.post('/serieedit/:id', async (req,res) =>{
+  const serie = await Series.findByPk(req.params.id);
+  const { titulo, ano, genero, temporadas, sinopse, nota, imagem, trailer} = req.body;
+  
+  filme.titulo = titulo;
+  filme.ano = ano;
+  filme.genero = genero;
+  filme.temporadas = temporadas;
+  filme.sinopse = sinopse;
+  filme.nota = nota;
+  filme.imagem = imagem;
+  filme.trailer = trailer
+
+  await serie.save();
+  res.redirect("/series");
 });
 
 

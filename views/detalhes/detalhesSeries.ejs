@@ -33,8 +33,8 @@
     <section>
         <ul>
             <div class="detalhes2">
-            <a><img src="/img/trash.png" class="buttonEdit"></a>
-            <a><img src="/img/edit.png" class="buttonEdit"></a>
+                <a href="/seriedelete/<%=serie.ID%>"><img src="/img/trash.png" class="buttonEdit"></a>
+                <a href="/serieedit/<%=serie.ID%>"><img src="/img/edit.png" class="buttonEdit"></a>
             <a href="/series"><img src="/img/closed.png"  id="closed"></a>
             <img src= "<%= serie.imagem %>" alt= "<%= serie.nome %>" width = "200" class="fotosDetalhes">
             <div class="itemTitulo">Titulo: <%= serie.titulo %></div>
