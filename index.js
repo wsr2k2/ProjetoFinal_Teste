@@ -7,35 +7,39 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 const db = require('./model/database');
 const Filmes = require('./model/Filmes');
+const Series = require('./model/Series');
+const Livros = require('./model/Livros');
+const Carros = require('./model/Carros');
+const Videos = require('./model/Videos');
 app.use(express.urlencoded());
 
 
 
-let series = [
-    {
-        id: 001,
-        titulo: "Dark",
-        ano: 2017,
-        genero: "Drama",
-        temporadas: 3,
-        episodios: 26,
-        sinopse: "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
-        nota: 10,
-        imagem: "https://upload.wikimedia.org/wikipedia/pt/thumb/f/f6/Dark_%28s%C3%A9rie%29.jpg/200px-Dark_%28s%C3%A9rie%29.jpg",
-        trailer: "https://www.youtube.com/embed/JCCssUOtn2E"   
-},
-{
-    id: 002,
-    titulo: "O Justiceiro",
-    ano: 2017,
-    genero: "Ação",
-    temporadas: 2,
-    episodios: 26,
-    sinopse: "O ex-marine Frank Castle só quer punir os criminosos responsáveis pela morte da sua família, mas torna-se alvo de uma conspiração militar.",
-    nota: 10,
-    imagem: "https://br.web.img3.acsta.net/pictures/17/10/19/14/40/3658022.jpg",
-    trailer: "https://www.youtube.com/embed/Bf8yGbn0__s"   
-}];
+// let series = [
+//     {
+//         id: 001,
+//         titulo: "Dark",
+//         ano: 2017,
+//         genero: "Drama",
+//         temporadas: 3,
+//         episodios: 26,
+//         sinopse: "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
+//         nota: 10,
+//         imagem: "https://upload.wikimedia.org/wikipedia/pt/thumb/f/f6/Dark_%28s%C3%A9rie%29.jpg/200px-Dark_%28s%C3%A9rie%29.jpg",
+//         trailer: "https://www.youtube.com/embed/JCCssUOtn2E"   
+// },
+// {
+//     id: 002,
+//     titulo: "O Justiceiro",
+//     ano: 2017,
+//     genero: "Ação",
+//     temporadas: 2,
+//     episodios: 26,
+//     sinopse: "O ex-marine Frank Castle só quer punir os criminosos responsáveis pela morte da sua família, mas torna-se alvo de uma conspiração militar.",
+//     nota: 10,
+//     imagem: "https://br.web.img3.acsta.net/pictures/17/10/19/14/40/3658022.jpg",
+//     trailer: "https://www.youtube.com/embed/Bf8yGbn0__s"   
+// }];
 let livros = [
     {
         id: 001,
@@ -81,7 +85,7 @@ let videos = [
        
 }];
 app.get("/", (req, res) => {
-    res.render("index", { titulo: "filmes", filmes: "" , titulo: "series", series: series, titulo: "livros", livros: livros, titulo: "carros", carros: carros, titulo: "videos", videos: videos });     
+    res.render("index", { titulo: "filmes", filmes: "" , titulo: "series", series: "", titulo: "livros", livros: "", titulo: "carros", carros: "", titulo: "videos", videos: "" });     
 });
 
 app.get("/filmes", async (req, res) => {
@@ -89,26 +93,28 @@ app.get("/filmes", async (req, res) => {
   res.render("filmes",{ Filmes: filmes});    
 });
 
-app.get("/series", (req, res) => {
-    res.render("series",{ titulo: "series", series: series});    
+app.get("/series", async (req, res) => {
+  const series = await Series.findAll()   
+  res.render("series",{ Series: series});    
 });
 
-app.get("/livros", (req, res) => {
-    res.render("livros",{ titulo: "livros", livros: livros});    
+app.get("/livros", async (req, res) => {
+  const livros = await Livros.findAll()   
+  res.render("livros",{ Livros: livros});    
+});
+app.get("/carros", async (req, res) => {
+  const carros = await Carros.findAll()   
+  res.render("carros",{ Carros: carros});    
+});
+app.get("/videos", async (req, res) => {
+  const videos = await Videos.findAll()   
+  res.render("videos",{ Videos: videos});    
 });
 
-app.get("/carros", (req, res) => {
-    res.render("carros",{ titulo: "carros", carros: carros});    
-});
-
-app.get("/videos", (req, res) => {
-    res.render("videos",{ titulo: "videos", videos: videos});    
-});
-
-app.get("/detalhes/detalhesFilmes/:id", (req, res) => {
+app.get("/detalhes/detalhesFilmes/", (req, res) => {
     const id = req.params.id
-    const filme = filmes[id]
-    res.render("detalhes/detalhesFilmes", { filme })
+    const filmes = Filmes[id]
+    res.render("detalhes/detalhesFilmes", { Filmes })
 });
 
 app.get("/detalhes/detalhesSeries/:id", (req, res) => {
@@ -154,26 +160,23 @@ app.post("/newFilme", async (req, res) => {
         
   res.redirect("/filmes");
   })
-
   app.get("/cadastroSerie", (req, res) => {
-    res.render("cadastroSerie")
+    res.render("../views/cadastroSerie")
   })
   
-  app.post("/newSerie", (req, res) => {
-    const {titulo, ano, genero, temporadas, episodios, sinopse, nota, imagem, trailer} = req.body;
-    const novaSerie = {
+  app.post("/newSerie", async (req, res) => {
+    const {titulo, ano, genero, temporadas, sinopse, nota, imagem, trailer} = req.body;
+    const series = await Series.create ({
       titulo: titulo,
       ano: ano,
       genero: genero,
       temporadas: temporadas,
-      episodios: episodios,
       sinopse: sinopse,
       nota: nota,
       imagem: imagem,
       trailer: trailer
-    }
-    series.push(novaSerie);
-    
+    })
+        
   res.redirect("/series");
   })
   
@@ -237,9 +240,6 @@ app.post("/newFilme", async (req, res) => {
   res.redirect("/videos");
   })
 
-  app.get("/teste", (req, res) => {
-    res.render("teste")
-  })
 
   db.conectado();
 

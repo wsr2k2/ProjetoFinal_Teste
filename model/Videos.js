@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const database = require('./database');
 
-const Filmes = database.sequelize.define("Filmes", {
+const Series = database.sequelize.define("Series", {
     ID: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -20,7 +20,7 @@ const Filmes = database.sequelize.define("Filmes", {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    duracao:{
+    temporadas:{
         type: Sequelize.STRING,
         allowNull: false,
     },
@@ -46,5 +46,5 @@ const Filmes = database.sequelize.define("Filmes", {
     createdAt: false,
     updatedAt: false,
 })
-
-module.exports = Filmes;
+Series.sync({ force: false });
+module.exports = Series;
