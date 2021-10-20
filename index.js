@@ -13,7 +13,6 @@ const Carros = require('./model/Carros');
 const Videos = require('./model/Videos');
 app.use(express.urlencoded());
 
-
 app.get("/", (req, res) => {
     res.render("index", { titulo: "filmes", filmes: "" , titulo: "series", series: "", titulo: "livros", livros: "", titulo: "carros", carros: "", titulo: "videos", videos: "" });     
 });
@@ -32,10 +31,12 @@ app.get("/livros", async (req, res) => {
   const livros = await Livros.findAll()   
   res.render("../controller/livros",{ Livros: livros});    
 });
+
 app.get("/carros", async (req, res) => {
   const carros = await Carros.findAll()   
   res.render("../controller/carros",{ Carros: carros});    
 });
+
 app.get("/videos", async (req, res) => {
   const videos = await Videos.findAll()   
   res.render("../controller/videos",{ Videos: videos});    
@@ -148,37 +149,46 @@ app.get("/cadastroVideo", (req, res) => {
 })
 
 app.post("/newVideo", async (req, res) => {
-  const {titulo, ano, genero, temporadas, sinopse, nota, imagem, trailer} = req.body;
+  const {titulo, descricao, tipo, nota, link} = req.body;
   const videos = await Videos.create ({
     titulo: titulo,
-    ano: ano,
-    genero: genero,
-    temporadas: temporadas,
-    sinopse: sinopse,
+    descricao: descricao,
+    tipo: tipo,
     nota: nota,
-    imagem: imagem,
-    trailer: trailer
+    link: link
 })      
 res.redirect("/videos");
-})  
-
+}) 
 
 app.get('/filmedelete/:id', async (req,res) => {
   const filme = await Filmes.findByPk(req.params.id);
-
   await filme.destroy();
-
   res.redirect("/filmes");
 });
 
 app.get('/seriedelete/:id', async (req,res) => {
   const serie = await Series.findByPk(req.params.id);
-
   await serie.destroy();
-
   res.redirect("/series");
 });
 
+app.get('/livrodelete/:id', async (req,res) => {
+  const livro = await Livros.findByPk(req.params.id);
+  await livro.destroy();
+  res.redirect("/livros");
+});
+
+app.get('/carrodelete/:id', async (req,res) => {
+  const carro = await SerCarrosies.findByPk(req.params.id);
+  await carro.destroy();
+  res.redirect("/carros");
+});
+
+app.get('/videodelete/:id', async (req,res) => {
+  const video = await Videos.findByPk(req.params.id);
+  await video.destroy();
+  res.redirect("/videos");
+});
 
 app.get('/filmeedit/:id', async (req,res) => {
   const filme = await Filmes.findByPk(req.params.id);
@@ -211,19 +221,82 @@ app.post('/serieedit/:id', async (req,res) =>{
   const serie = await Series.findByPk(req.params.id);
   const { titulo, ano, genero, temporadas, sinopse, nota, imagem, trailer} = req.body;
   
-  filme.titulo = titulo;
-  filme.ano = ano;
-  filme.genero = genero;
-  filme.temporadas = temporadas;
-  filme.sinopse = sinopse;
-  filme.nota = nota;
-  filme.imagem = imagem;
-  filme.trailer = trailer
+  serie.titulo = titulo;
+  serie.ano = ano;
+  serie.genero = genero;
+  serie.temporadas = temporadas;
+  serie.sinopse = sinopse;
+  serie.nota = nota;
+  serie.imagem = imagem;
+  serie.trailer = trailer
 
   await serie.save();
   res.redirect("/series");
 });
 
+app.get('/livroedit/:id', async (req,res) => {
+  const livro = await Livros.findByPk(req.params.id);
+  res.render("../controller/cadastroLivro", {livro: livro});
+});
+
+app.post('/livroedit/:id', async (req,res) =>{
+  const livro = await Livros.findByPk(req.params.id);
+  const { titulo, idioma, autor, genero, paginas, sinopse, nota, imagem} = req.body;
+  
+  livro.titulo = titulo;
+  livro.idioma = idioma;
+  livro.autor = autor;
+  livro.genero = genero;
+  livro.paginas = paginas;
+  livro.sinopse = sinopse;
+  livro.nota = nota;
+  livro.imagem = imagem
+
+  await livro.save();
+  res.redirect("/livros");
+});
+
+app.get('/carroedit/:id', async (req,res) => {
+  const carro = await Carros.findByPk(req.params.id);
+  res.render("../controller/cadastroCarro", {carro: carro});
+});
+
+app.post('/carroedit/:id', async (req,res) =>{
+  const carro = await Carros.findByPk(req.params.id);
+  const {marca, modelo, potencia, velocidade, zeroCem, descricao, nota, imagem, site } = req.body;
+  
+  carro.marca = marca;
+  carro.modelo = modelo;
+  carro.potencia = potencia;
+  carro.velocidade = velocidade;
+  carro.zeroCem = zeroCem;
+  carro.descricao = descricao;
+  carro.nota = nota;
+  carro.imagem = imagem
+  carro.site = site
+
+  await carro.save();
+  res.redirect("/carros");
+});
+
+app.get('/videoedit/:id', async (req,res) => {
+  const video = await Videos.findByPk(req.params.id);
+  res.render("../controller/cadastroVideo", {video: video});
+});
+
+app.post('/videoedit/:id', async (req,res) =>{
+  const video = await Videos.findByPk(req.params.id);
+  const { titulo, descricao, tipo, nota, link } = req.body;
+  
+  video.titulo = titulo;
+  video.descricao = descricao;
+  video.tipo = tipo;
+  video.nota = nota;
+  video.link = link;
+  
+  await carro.save();
+  res.redirect("/carros");
+});
 
 db.conectado();
 

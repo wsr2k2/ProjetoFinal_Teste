@@ -33,8 +33,8 @@
     <section>
         <ul>
             <div class="detalhes2">
-                <a><img src="/img/trash.png" class="buttonEdit"></a>
-                <a><img src="/img/edit.png" class="buttonEdit"></a>
+                <a href="/carrodelete/<%=carro.ID%>"><img src="/img/trash.png" class="buttonEdit"></a>
+                <a href="/carroedit/<%=carro.ID%>"><img src="/img/edit.png" class="buttonEdit"></a>
                 <a href="/carros"><img src="/img/closed.png"  id="closed"></a>
                 <a href="/carros"><img src= "<%= carro.imagem %>" alt= "<%= carro.nome %>" width = "200" class="fotosDetalhes"></a>
                 <div class="itemInfo"><strong> Marca: </strong><%= carro.marca %></div>

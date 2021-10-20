@@ -33,8 +33,8 @@
     <section>
         <ul>
             <div class="detalhes2">
-                <a><img src="/img/trash.png" class="buttonEdit"></a>
-                <a><img src="/img/edit.png" class="buttonEdit"></a>
+                <a href="/videodelete/<%=video.ID%>"><img src="/img/trash.png" class="buttonEdit"></a>
+                <a href="/videoedit/<%=video.ID%>"><img src="/img/edit.png" class="buttonEdit"></a>
                 <a href="/videos"><img src="/img/closed.png"  id="closed"></a>
                 <iframe src="<%= video.link %>" class="itemFrame"></iframe>            
                 <div class="itemTitulo"><%= video.titulo %></div>

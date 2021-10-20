@@ -19,12 +19,10 @@
     cursor: pointer;
     border-radius: 10px;
 }
-
 .btn_cadastro:hover {
   background-color: #f44336;
   color: white;
 }
-
 .header{
   /* background: ; */
   padding: 12px;

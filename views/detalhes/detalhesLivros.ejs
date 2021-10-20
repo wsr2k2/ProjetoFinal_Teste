@@ -32,8 +32,8 @@
     <section>
         <ul>
             <div class="detalhes2">
-            <a><img src="/img/trash.png" class="buttonEdit"></a>
-            <a><img src="/img/edit.png" class="buttonEdit"></a>
+                <a href="/livrodelete/<%=livro.ID%>"><img src="/img/trash.png" class="buttonEdit"></a>
+                <a href="/livroedit/<%=livro.ID%>"><img src="/img/edit.png" class="buttonEdit"></a>
             <a href="/livros"><img src="/img/closed.png"  id="closed"></a>
             <img src= "<%= livro.imagem %>" alt= "<%= livro.nome %>" width = "200" class="fotosDetalhes">
             <div class="itemTitulo"><%= livro.titulo %></div>
