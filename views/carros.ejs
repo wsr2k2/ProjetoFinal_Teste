@@ -30,11 +30,12 @@
     <div id="stars3"></div>
     <div id="title"></div>
 <section class="container">
-  <% Carros.forEach((item) => { %>
+  <% Carros.forEach(item => { %>
   <ul>
     <div>
-      <a href="/detalhes/detalhesCarros/<%=id%>">
-        <img src="<%= item.imagem %>" width="200" alt="<%= item.nome %>" />        
+      <a href="/detalhes/detalhesCarros/<%= item.ID %>">
+        <img src= "<%= item.imagem %>" alt= "<%= item.nome %>" width = "200" class="fotosDetalhes">
+        <p><h2 class="nameItem"> <%= item.titulo %></h2></p>        
   </ul>
   <% }) %>
 </section>

@@ -1,30 +1,34 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const database = require('./database');
 
-const Series = database.sequelize.define("Series", {
+const Carros = database.sequelize.define("Carros", {
     ID: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    titulo:{
+    marca:{
         type: Sequelize.STRING,
         allowNull: false,
     },
-    ano:{
+    modelo:{
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    potencia:{
         type: Sequelize.INTEGER,
         allowNull: false,
     },
-    genero:{
-        type: Sequelize.STRING,
+    velocidade:{
+        type: Sequelize.INTEGER,
         allowNull: false,
     },
-    temporadas:{
-        type: Sequelize.STRING,
-        allowNull: false,
+    zeroCem:{
+        type: Sequelize.INTEGER,
+        allowNull: true,
     },
-    sinopse:{
+    descricao:{
         type: Sequelize.STRING,
         allowNull: true,
     },
@@ -36,7 +40,7 @@ const Series = database.sequelize.define("Series", {
         type: Sequelize.STRING,
         allowNull: true,
     },
-    trailer:{
+    site:{
         type: Sequelize.STRING,
         allowNull: true,
     }
@@ -46,5 +50,5 @@ const Series = database.sequelize.define("Series", {
     createdAt: false,
     updatedAt: false,
 })
-Series.sync({ force: false });
-module.exports = Series;
+
+module.exports = Carros;

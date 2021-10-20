@@ -32,14 +32,12 @@
       <% Series.forEach(item  => { %>
       <ul>
         <div>
-          <a href="/detalhes/detalhesSeries/">         
-            <p><h2 class="nameItem"> <%= item.titulo %></h2></p>
-            <h1><%= item.ID %></h1>     
+          <img src= "<%= item.imagem %>" alt= "<%= item.nome %>" width = "200" class="fotosDetalhes">
+        <p><h2 class="nameItem"> <%= item.titulo %></h2></p>   
       </ul>
       <% }) %>
 </section>
 </section>
-
 <script src="/js/script.js"></script>
 </body>
 </html>

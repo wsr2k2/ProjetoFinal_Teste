@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const database = require('./database');
 
-const Series = database.sequelize.define("Series", {
+const Livros = database.sequelize.define("Livros", {
     ID: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -12,17 +12,21 @@ const Series = database.sequelize.define("Series", {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    ano:{
-        type: Sequelize.INTEGER,
+    idioma:{
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    autor:{
+        type: Sequelize.STRING,
         allowNull: false,
     },
     genero:{
         type: Sequelize.STRING,
         allowNull: false,
     },
-    temporadas:{
-        type: Sequelize.STRING,
-        allowNull: false,
+    paginas:{
+        type: Sequelize.INTEGER,
+        allowNull: true,
     },
     sinopse:{
         type: Sequelize.STRING,
@@ -35,10 +39,6 @@ const Series = database.sequelize.define("Series", {
     imagem:{
         type: Sequelize.STRING,
         allowNull: true,
-    },
-    trailer:{
-        type: Sequelize.STRING,
-        allowNull: true,
     }
 },{
     freezeTableName: true,
@@ -46,5 +46,5 @@ const Series = database.sequelize.define("Series", {
     createdAt: false,
     updatedAt: false,
 })
-Series.sync({ force: false });
-module.exports = Series;
+// Series.sync({ force: false });
+module.exports = Livros;
