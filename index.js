@@ -163,6 +163,15 @@ res.redirect("/videos");
 })  
 
 
+app.get('/filmedelete/:id', async (req,res) => {
+  const filme = await Filmes.findByPk(req.params.id);
+
+  await filme.destroy();
+
+  res.redirect("/filmes");
+});
+
+
 db.conectado();
 
 app.listen(port, () =>
