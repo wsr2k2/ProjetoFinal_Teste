@@ -111,10 +111,9 @@ app.get("/videos", async (req, res) => {
   res.render("videos",{ Videos: videos});    
 });
 
-app.get("/detalhes/detalhesFilmes/", (req, res) => {
-    const id = req.params.id
-    const filmes = Filmes[id]
-    res.render("detalhes/detalhesFilmes", { Filmes })
+app.get("/detalhes/detalhesFilmes/:id", async (req, res) => {
+   const filme = await Filmes.findByPk(req.params.id);   
+  res.render("detalhes/detalhesFilmes", { filme })
 });
 
 app.get("/detalhes/detalhesSeries/:id", (req, res) => {

@@ -32,7 +32,7 @@
   <% Filmes.forEach(item  => { %>
   <ul>
     <div>
-      <a href="/detalhes/detalhesFilmes/">         
+      <a href="/detalhes/detalhesFilmes/<%= item.ID %>">         
         <p><h2 class="nameItem"> <%= item.titulo %></h2></p>
         <h1><%= item.ID %></h1>     
   </ul>
