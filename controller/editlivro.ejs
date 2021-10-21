@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head id="head-index">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <title>Cadastro</title>
+  </head>
+  
+  <body id="body_cadastro">
+    <section class="wrapper">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <div id="title"></div>
+    <section>
+      <h1 id="cadastro1">CADASTRO DE LIVROS</h1>
+    </section>
+    <a href="/livros"><img src="/img/closed.png"  id="closed"></a>
+    <section id="cadastro">
+      <form method="POST">
+        <div>
+          <label for="titulo">Título:</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Nome do livro"
+            required
+            value="<%= livro.titulo%>">
+        </div>
+        <div>
+          <label for="idioma">Idioma:</label>
+          <input
+            type="text"
+            name="idioma"
+            id="idioma"
+            placeholder="Idioma"
+            required
+            value="<%= livro.idioma%>">
+        </div>
+        <div>
+          <label for="autor">Autor:</label>
+          <input
+            type="text"
+            name="autor"
+            id="autor"
+            placeholder="Autor"
+            required
+            value="<%= livro.autor%>">
+        </div>
+        <div>
+          <label for="genero">Genero:</label>
+          <input
+            type="text"
+            name="genero"
+            id="genero"
+            placeholder="Genero"
+            required
+            value="<%= livro.genero%>">
+        </div>
+        <div>
+          <label for="paginas">Páginas:</label>
+          <input
+            type="number"
+            name="paginas"
+            id="paginas"
+            placeholder="Páginas"
+            required
+            value="<%= livro.paginas%>">
+        </div>
+        <div>
+          <label for="sinopse">Sinopse:</label>
+          <input
+            type="text"
+            name="sinopse"
+            id="sinopse"
+            placeholder="Sinopse"
+            required
+            value="<%= livro.sinopse%>">
+        </div>
+        <div>
+          <label for="note">Nota:</label>
+          <input
+            type="float"
+            name="nota"
+            id="nota"
+            placeholder="Nota"
+            required
+            value="<%= livro.nota%>">
+        </div>
+        <div>
+          <label for="imagem">Imagem:</label>
+          <input
+            type="url"
+            name="imagem"
+            id="imagem"
+            placeholder="Link da imagem"
+            required
+            value="<%= livro.imagem%>">
+        </div>
+        <button type="submit" id="enviar">Enviar</button>
+        <input type="hidden" name="id" value="<%= livro.ID%>">
+      </form>
+    </section>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

@@ -23,6 +23,12 @@
       </ul>
     </div>
 </header>
+<% if(message != ""){ %>
+  <section id="message">
+    <p class="sucesso">Carro cadastrado com sucesso!</p>
+    <span id="close">&times;</span>
+  </section>
+  <% } %>
 <body class="">
   <section class="wrapper">
     <div id="stars"></div>
@@ -34,7 +40,7 @@
   <ul>
     <div>
       <a href="/detalhes/detalhesCarros/<%= item.ID %>">
-        <img src= "<%= item.imagem %>" alt= "<%= item.nome %>" width = "200" class="fotosDetalhes">
+        <img src= "<%= item.imagem %>" alt= "<%= item.nome %>" width = "200" class="fotosDetalhes"></a>
         <p><h2 class="nameItem"> <%= item.titulo %></h2></p>        
   </ul>
   <% }) %>

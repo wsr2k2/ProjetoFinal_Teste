@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head id="head-index">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <title>Cadastro</title>
+  </head>
+  
+  <body id="body_cadastro">
+    <section class="wrapper">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <div id="title"></div>
+    <section>
+      <h1 id="cadastro1">ALTERA FILME</h1>
+    </section>    
+    <a href="/filmes"><img src="/img/closed.png"  id="closed"></a>
+    <section id="cadastro">
+      <form method="POST">
+        <div>
+          <label for="titulo">Título:</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Nome do filme"
+            required
+            value="<%= filme.titulo%>">
+        </div>
+        <div>
+          <label for="ano">Ano:</label>
+          <input
+            type="number"
+            name="ano"
+            id="ano"
+            placeholder="Ano de Lançamento"
+            required
+            value="<%= filme.ano%>">
+        </div>
+        <div>
+          <label for="genero">Genero:</label>
+          <input
+            type="text"
+            name="genero"
+            id="genero"
+            placeholder="Genero"
+            required
+            value="<%= filme.genero%>">
+        </div>
+        <div>
+          <label for="duracao">Duração:</label>
+          <input
+            type="text"
+            name="duracao"
+            id="duracao"
+            placeholder="Duração"
+            required
+            value="<%= filme.duracao%>">
+        </div>
+        <div>
+          <label for="sinopse">Sinopse:</label>
+          <input
+            type="text"
+            name="sinopse"
+            id="sinopse"
+            placeholder="Sinopse do filme"
+            required
+            value="<%= filme.sinopse%>">
+        </div>
+        <div>
+          <label for="note">Nota:</label>
+          <input
+            type="float"
+            name="nota"
+            id="nota"
+            placeholder="Nota"
+            required
+            value="<%= filme.nota%>">
+        </div>
+        <div>
+          <label for="imagem">Imagem:</label>
+          <input
+            type="url"
+            name="imagem"
+            id="imagem"
+            placeholder="Link da imagem"
+            required
+            value="<%= filme.imagem%>">
+        </div>
+        <div>
+          <label for="trailer">Trailer:</label>
+          <input
+            type="url"
+            name="trailer"
+            id="trailer"
+            placeholder="Link do trailer"
+            required
+            value="<%= filme.trailer%>">
+        </div>
+        <input type="hidden" name="id" value="<%= filme.ID%>">
+        <button type="submit" id="enviar">Enviar</button>
+      </form>
+    </section>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

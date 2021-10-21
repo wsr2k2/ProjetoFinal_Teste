@@ -13,7 +13,7 @@
   <div class="center">
     <div class="menu" id="menuId" > 
       <ul id="navegacao">
-        <li><a  href="/"><strong">INICIO</strong></li>
+        <li><a href="/"><strong">INICIO</strong></li>
         <li><a href="/filmes">FILMES</li>
         <li><a href="/series">SERIES</li>
         <li><a href="/livros">LIVROS</li>
@@ -23,6 +23,12 @@
       </ul>
     </div>
 </header>
+<% if(message != ""){ %>
+  <section id="message">
+    <p class="sucesso">Video cadastrado com sucesso!</p>
+    <span id="close">&times;</span>
+  </section>
+  <% } %>
     
 <body class="">
   <section class="wrapper">
@@ -35,11 +41,11 @@
   <% Videos.forEach((item) => { %>
   <ul>
     <div>
-          
-      <a href="/detalhes/detalhesVideos/<%= item.ID %>">
-        <iframe src="<%= item.link %>" alt="<%= item.nome %>" /></iframe>  
-        <button>
-          <a href="/detalhes/detalhesVideos/<%= item.ID %>">DETALHES</a></button>      
+      <iframe src="<%= item.link %>" alt="<%= item.nome %>" /></iframe>
+        </div>
+        <div>
+        <button class="btn_video">
+          <a href="/detalhes/detalhesVideos/<%= item.ID %>" class="tagA">DETALHES</a></button></div>      
   </ul>  
   <% }) %>
 </section>

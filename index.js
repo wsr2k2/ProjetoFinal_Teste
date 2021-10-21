@@ -13,33 +13,35 @@ const Carros = require('./model/Carros');
 const Videos = require('./model/Videos');
 app.use(express.urlencoded());
 
+let message = ""
+
 app.get("/", (req, res) => {
     res.render("index", { titulo: "filmes", filmes: "" , titulo: "series", series: "", titulo: "livros", livros: "", titulo: "carros", carros: "", titulo: "videos", videos: "" });     
 });
 
 app.get("/filmes", async (req, res) => {
   const filmes = await Filmes.findAll()   
-  res.render("../controller/filmes",{ Filmes: filmes});    
+  res.render("../controller/filmes",{ Filmes: filmes, message});    
 });
 
 app.get("/series", async (req, res) => {
   const series = await Series.findAll()   
-  res.render("../controller/series",{ Series: series});    
+  res.render("../controller/series",{ Series: series, message});    
 });
 
 app.get("/livros", async (req, res) => {
   const livros = await Livros.findAll()   
-  res.render("../controller/livros",{ Livros: livros});    
+  res.render("../controller/livros",{ Livros: livros, message});    
 });
 
 app.get("/carros", async (req, res) => {
   const carros = await Carros.findAll()   
-  res.render("../controller/carros",{ Carros: carros});    
+  res.render("../controller/carros",{ Carros: carros, message});    
 });
 
 app.get("/videos", async (req, res) => {
   const videos = await Videos.findAll()   
-  res.render("../controller/videos",{ Videos: videos});    
+  res.render("../controller/videos",{ Videos: videos, message});    
 });
 
 app.get("/detalhes/detalhesFilmes/:id", async (req, res) => {
@@ -58,7 +60,7 @@ app.get("/detalhes/detalhesLivros/:id", async (req, res) => {
 });
 
 app.get("/detalhes/detalhesCarros/:id", async (req, res) => {
-  const carros = await Carros.findByPk(req.params.id);   
+  const carro = await Carros.findByPk(req.params.id);   
  res.render("detalhes/detalhesCarros", { carro })
 });
 
@@ -83,6 +85,11 @@ app.post("/newFilme", async (req, res) => {
       imagem: imagem,
       trailer: trailer
     })        
+    message = 'cadastrado com sucesso';
+    setTimeout(() => {
+      message = ""
+  }, 3000);
+
   res.redirect("/filmes");
   })
 
@@ -101,7 +108,11 @@ app.post("/newSerie", async (req, res) => {
       nota: nota,
       imagem: imagem,
       trailer: trailer
-    })        
+    })
+    message = 'cadastrado com sucesso';
+    setTimeout(() => {
+      message = ""
+  }, 3000);        
   res.redirect("/series");
 })
 
@@ -120,7 +131,11 @@ app.post("/newLivro", async (req, res) => {
     sinopse: sinopse,
     nota: nota,
     imagem: imagem
-})      
+})
+message = 'cadastrado com sucesso';
+    setTimeout(() => {
+      message = ""
+  }, 3000);      
 res.redirect("/livros");
 })
 
@@ -140,7 +155,11 @@ app.post("/newCarro", async (req, res) => {
     nota: nota,
     imagem: imagem,
     site: site
-})      
+})
+message = 'cadastrado com sucesso';
+    setTimeout(() => {
+      message = ""
+  }, 3000);      
 res.redirect("/carros");
 })
   
@@ -156,7 +175,11 @@ app.post("/newVideo", async (req, res) => {
     tipo: tipo,
     nota: nota,
     link: link
-})      
+})
+message = 'cadastrado com sucesso';
+    setTimeout(() => {
+      message = ""
+  }, 3000);      
 res.redirect("/videos");
 }) 
 
@@ -179,7 +202,7 @@ app.get('/livrodelete/:id', async (req,res) => {
 });
 
 app.get('/carrodelete/:id', async (req,res) => {
-  const carro = await SerCarrosies.findByPk(req.params.id);
+  const carro = await Carros.findByPk(req.params.id);
   await carro.destroy();
   res.redirect("/carros");
 });
@@ -192,7 +215,7 @@ app.get('/videodelete/:id', async (req,res) => {
 
 app.get('/filmeedit/:id', async (req,res) => {
   const filme = await Filmes.findByPk(req.params.id);
-  res.render("../controller/cadastroFilme", {filme: filme});
+  res.render("../controller/editfilme", {filme: filme});
 });
 
 app.post('/filmeedit/:id', async (req,res) =>{
@@ -214,7 +237,7 @@ app.post('/filmeedit/:id', async (req,res) =>{
 
 app.get('/serieedit/:id', async (req,res) => {
   const serie = await Filmes.findByPk(req.params.id);
-  res.render("../controller/cadastroSerie", {serie: serie});
+  res.render("../controller/editserie", {serie: serie});
 });
 
 app.post('/serieedit/:id', async (req,res) =>{
@@ -236,7 +259,7 @@ app.post('/serieedit/:id', async (req,res) =>{
 
 app.get('/livroedit/:id', async (req,res) => {
   const livro = await Livros.findByPk(req.params.id);
-  res.render("../controller/cadastroLivro", {livro: livro});
+  res.render("../controller/editlivro", {livro: livro});
 });
 
 app.post('/livroedit/:id', async (req,res) =>{
@@ -258,7 +281,7 @@ app.post('/livroedit/:id', async (req,res) =>{
 
 app.get('/carroedit/:id', async (req,res) => {
   const carro = await Carros.findByPk(req.params.id);
-  res.render("../controller/cadastroCarro", {carro: carro});
+  res.render("../controller/editcarro", {carro: carro});
 });
 
 app.post('/carroedit/:id', async (req,res) =>{
@@ -281,7 +304,7 @@ app.post('/carroedit/:id', async (req,res) =>{
 
 app.get('/videoedit/:id', async (req,res) => {
   const video = await Videos.findByPk(req.params.id);
-  res.render("../controller/cadastroVideo", {video: video});
+  res.render("../controller/editvideo", {video: video});
 });
 
 app.post('/videoedit/:id', async (req,res) =>{

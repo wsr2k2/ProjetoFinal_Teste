@@ -18,10 +18,16 @@
         <li><a href="livros">LIVROS</li>
         <li><a href="carros">CARROS</li>
         <li><a href="videos">VIDEOS</li>
-        <li><button class="btn_cadastro"><a href="/cadastroFilme">CADASTRAR FILME</li></button>
+        <li><button class="btn_cadastro"><a href="/cadastroFilme">CADASTRAR FILME</li></a></button>
       </ul>
     </div>
 </header>
+<% if(message != ""){ %>
+  <section id="message">
+    <p class="sucesso">Filme cadastrado com sucesso!</p>
+    <span id="close">&times;</span>
+  </section>
+  <% } %>
 <body class="">
   <section class="wrapper">
     <div id="stars"></div>
@@ -35,7 +41,7 @@
       <a href="/detalhes/detalhesFilmes/<%= item.ID %>">
         <img src= "<%= item.imagem %>" alt= "<%= item.nome %>" width = "200" class="fotosDetalhes">  </a>       
         <p><h2 class="nameItem"> <%= item.titulo %></h2></p>
-        <h1><%= item.foto %></h1>     
+             
   </ul>
   <% }) %>
 </section>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head id="head-index">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <title>Cadastro</title>
+  </head>
+  
+  <body id="body_cadastro">
+    <section class="wrapper">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <div id="title"></div>
+    <section>
+      <h1 id="cadastro1">CADASTRO DE VIDEOS</h1>
+    </section>
+    <a href="/videos"><img src="/img/closed.png"  id="closed"></a>
+    <section id="cadastro">
+      <form method="POST">
+        <div>
+          <label for="titulo">Título:</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Nome do vídeo"
+            required
+            value="<%= video.titulo%>">
+        </div>
+        <div>
+          <label for="descricao">Descrição:</label>
+          <input
+            type="text"
+            name="descricao"
+            id="descricao"
+            placeholder="Descricao"
+            required
+            value="<%= video.descricao%>">
+        </div>
+        <div>
+          <label for="tipo">Tipo de Conteúdo:</label>
+          <input
+            type="text"
+            name="tipo"
+            id="tipo"
+            placeholder="Tipo de conteúdo"
+            required
+            value="<%= video.centeudo%>">
+        </div>
+        <div>
+          <label for="note">Nota:</label>
+          <input
+            type="float"
+            name="nota"
+            id="nota"
+            placeholder="Nota"
+            required
+            value="<%= video.nota%>">
+        </div>
+        <div>
+          <label for="link">Link do Vídeo:</label>
+          <input
+            type="url"
+            name="link"
+            id="link"
+            placeholder="Link do vídeo"
+            required
+            value="<%= video.link%>">
+        </div>
+        <input type="hidden" name="id" value="<%= video.ID%>">
+        <button type="submit" id="enviar">Enviar</button>
+      </form>
+    </section>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

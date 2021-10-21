@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head id="head-index">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <title>Cadastro</title>
+  </head>
+  
+  <body id="body_cadastro">
+    <section class="wrapper">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <div id="title"></div>
+    <section>
+      <h1 id="cadastro1">ALTERA SERIES</h1>
+    </section>
+    <a href="/series"><img src="/img/closed.png"  id="closed"></a>
+    <section id="cadastro">
+      <form method="POST">
+        <div>
+          <label for="titulo">Título:</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Nome da série"
+            required
+            value="<%= serie.titulo%>">
+        </div>
+        <div>
+          <label for="ano">Ano:</label>
+          <input
+            type="number"
+            name="ano"
+            id="ano"
+            placeholder="Ano de Lançamento"
+            required
+            value="<%= serie.ano%>">
+        </div>
+        <div>
+          <label for="genero">Genero:</label>
+          <input
+            type="text"
+            name="genero"
+            id="genero"
+            placeholder="Genero"
+            required
+            value="<%= serie.genero%>">
+        </div>
+        <div>
+          <label for="temporadas">Temporadas:</label>
+          <input
+            type="number"
+            name="temporadas"
+            id="temporadas"
+            placeholder="temporadas"
+            required
+            value="<%= serie.temporadas%>">
+        </div>
+        <div>
+          <label for="episodios">Episódios
+            :</label>
+          <input
+            type="number"
+            name="episodios"
+            id="episodios"
+            placeholder="Episódios"
+            required
+            value="<%= serie.espisodios%>">
+        </div>
+        <div>
+          <label for="sinopse">Sinopse:</label>
+          <input
+            type="text"
+            name="sinopse"
+            id="sinopse"
+            placeholder="Sinopse"
+            required
+            value="<%= serie.sinopse%>">
+        </div>
+        <div>
+          <label for="note">Nota:</label>
+          <input
+            type="float"
+            name="nota"
+            id="nota"
+            placeholder="Nota"
+            required
+            value="<%= serie.nota%>">
+        </div>
+        <div>
+          <label for="imagem">Imagem:</label>
+          <input
+            type="url"
+            name="imagem"
+            id="imagem"
+            placeholder="Link da imagem"
+            required
+            value="<%= serie.imagem%>">
+        </div>
+        <div>
+          <label for="trailer">Trailer:</label>
+          <input
+            type="url"
+            name="trailer"
+            id="trailer"
+            placeholder="Link do trailer"
+            required
+            value="<%= serie.trailer%>">
+        </div>
+        <input type="hidden" name="id" value="<%= serie.ID%>">
+        <button type="submit" id="enviar">Enviar</button>
+      </form>
+    </section>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
