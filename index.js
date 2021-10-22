@@ -98,12 +98,13 @@ app.get("/cadastroSerie", (req, res) => {
   })
   
 app.post("/newSerie", async (req, res) => {
-    const {titulo, ano, genero, temporadas, sinopse, nota, imagem, trailer} = req.body;
+    const {titulo, ano, genero, temporadas,episodios, sinopse, nota, imagem, trailer} = req.body;
     const series = await Series.create ({
       titulo: titulo,
       ano: ano,
       genero: genero,
       temporadas: temporadas,
+      episodios: episodios,
       sinopse: sinopse,
       nota: nota,
       imagem: imagem,
@@ -236,18 +237,19 @@ app.post('/filmeedit/:id', async (req,res) =>{
 });
 
 app.get('/serieedit/:id', async (req,res) => {
-  const serie = await Filmes.findByPk(req.params.id);
+  const serie = await Series.findByPk(req.params.id);
   res.render("../controller/editserie", {serie: serie});
 });
 
 app.post('/serieedit/:id', async (req,res) =>{
   const serie = await Series.findByPk(req.params.id);
-  const { titulo, ano, genero, temporadas, sinopse, nota, imagem, trailer} = req.body;
+  const { titulo, ano, genero, temporadas, episodios, sinopse, nota, imagem, trailer} = req.body;
   
   serie.titulo = titulo;
   serie.ano = ano;
   serie.genero = genero;
   serie.temporadas = temporadas;
+  serie.episodios = episodios;
   serie.sinopse = sinopse;
   serie.nota = nota;
   serie.imagem = imagem;
@@ -317,8 +319,8 @@ app.post('/videoedit/:id', async (req,res) =>{
   video.nota = nota;
   video.link = link;
   
-  await carro.save();
-  res.redirect("/carros");
+  await video.save();
+  res.redirect("/videos");
 });
 
 db.conectado();
