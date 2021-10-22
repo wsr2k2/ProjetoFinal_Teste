@@ -21,7 +21,11 @@ const Series = database.sequelize.define("Series", {
         allowNull: false,
     },
     temporadas:{
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
+        allowNull: false,
+    },
+    episodios:{
+        type: Sequelize.INTEGER,
         allowNull: false,
     },
     sinopse:{
