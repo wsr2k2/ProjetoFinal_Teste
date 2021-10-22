@@ -98,7 +98,7 @@ app.get("/cadastroSerie", (req, res) => {
   })
   
 app.post("/newSerie", async (req, res) => {
-    const {titulo, ano, genero, temporadas,episodios, sinopse, nota, imagem, trailer} = req.body;
+    const {titulo, ano, genero, temporadas, episodios, sinopse, nota, imagem, trailer} = req.body;
     const series = await Series.create ({
       titulo: titulo,
       ano: ano,
